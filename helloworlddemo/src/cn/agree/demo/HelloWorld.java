@@ -14,4 +14,13 @@ public class HelloWorld {
             System.out.println();
         }
     }
+
+    /*
+    定义计算两个整数和的方法
+    返回值类型，计算结果是int
+    参数：不确定数据求和，定义int参数.参数又称为形式参数
+    */
+    public static int getSum(int a, int b) {
+        return a + b;
+    }
 }
