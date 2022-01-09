@@ -4,6 +4,10 @@ public class Student {
     // 成员变量
     private String name;
     private int age;
+    // 学生的id
+    private int sid;
+    // 类变量,记录学生数量,分配学号
+    public static int numberOfStudent = 0;
 
     // 无参构造
     public Student() {
@@ -13,6 +17,7 @@ public class Student {
     public Student(String name, int age) {
         this.name = name;
         this.age = age;
+        this.sid = ++numberOfStudent;
     }
 
     public String getName() {
@@ -29,6 +34,10 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public static void showNum() {
+        System.out.println("num:"+numberOfStudent);
     }
 
     public void study() {
