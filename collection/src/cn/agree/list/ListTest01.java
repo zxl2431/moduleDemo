@@ -17,6 +17,7 @@ public class ListTest01 {
         list.add("Mr.Zhang");
         list.add("Mrs.Yi");
         list.add("ZiAn");
+        list.add("Mr.Zhang");
 
         System.out.println(list);
 
