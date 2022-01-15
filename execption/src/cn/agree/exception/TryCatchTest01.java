@@ -6,7 +6,8 @@ import java.io.IOException;
 public class TryCatchTest01 {
     public static void main(String[] args) {
         try {
-            read("a.txt");
+            read("b.txt");
+            System.out.println("后面不执行了吧");
         } catch (FileNotFoundException e) {
             System.out.println(e);
             // 抓取到的是编译时期的异常, 抛出去的是运行时期的
