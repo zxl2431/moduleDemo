@@ -10,7 +10,18 @@ public class InputStreamTest01 {
         File file = new File("E:/a.txt");
         FileInputStream fis1 = new FileInputStream(file);
 
-        int read = fis1.read();
-        System.out.println( read);
+        /*
+        *  循环读取
+        *  每次读出来的都是一个byte 所以有中文的时候就会出现乱码
+        *  因为中文是两个byte
+        *
+        * */
+        int b;
+        while (( b = fis1.read() ) != -1) {
+            System.out.println((char) b);
+        }
+
+        // 关闭资源
+        fis1.close();
     }
 }
