@@ -2,6 +2,7 @@ package cn.agree.internet;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -19,7 +20,12 @@ public class ServerTCP {
         int len = is.read(bytes);
         String msg = new String(bytes, 0, len);
         System.out.println(msg);
+        // ======== 礼尚往来 回写数据 =======
+        OutputStream out = server.getOutputStream();
+        out.write("我还蛮好的,谢谢".getBytes());
+
         // 5.关闭资源
+        out.close();
         is.close();
         server.close();
 
