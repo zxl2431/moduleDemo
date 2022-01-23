@@ -20,6 +20,14 @@ public class FileUpload_Client {
         }
 
         System.out.println("文件发送完毕");
+
+        // 解析回写
+        InputStream in = socket.getInputStream();
+        byte[] bytes1 = new byte[1024];
+        in.read(bytes1);
+        System.out.println(new String(bytes1));
+        in.close();
+
         // 关闭资源
         bos.close();
         socket.close();
