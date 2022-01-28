@@ -25,6 +25,14 @@ public class GetStreamTest01 {
         Stream<String> valueStream = map.values().stream();
         Stream<Map.Entry<String, String>> entryStream = map.entrySet().stream();
 
+        /*
+        *  数组获取流
+        *
+        * */
+        String[] array = { "张无忌", "张翠山", "张三丰", "张一元" };
+        Stream<String> stream = Stream.of(array);
+        System.out.println(stream.count());
+
 
     }
 }
