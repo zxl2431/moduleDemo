@@ -88,7 +88,20 @@
 
 ##### 3.3 DML语句
 
+1. 插入 insert --- insert into 表名() values()  
 
+2. 蠕虫复制 ---insert into student2 select * from student;
+
+3. 更新表记录 update 表名 set 字段名 = 值 where 字段名=值;
+
+4. 删除表记录 ---delete from 表名 where 字段名=值;
+
+5. truncate删除表记录 ---truncate table 表名;
+
+   **truncate和delete的区别**
+
+   - delete是将表中的数据一条一条删除
+   - truncate是将整个表摧毁, 重新创建一个新的表和原来的结构一模一样
 
 ​    
 
