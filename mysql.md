@@ -103,6 +103,38 @@
    - delete是将表中的数据一条一条删除
    - truncate是将整个表摧毁, 重新创建一个新的表和原来的结构一模一样
 
+
+
+##### 3.4 DQL查询语句
+
+1. select * from 表名
+
+2. 去重查询 ---select **distinct** name, age from student;
+
+3. 查询math和English成绩之和 ---select math+English 总成绩 from student;
+
+4. 查询姓名、年龄、并将年龄+10 ---select name, age, age+10 from student;
+
+5. 条件查询(数学成绩大于80) ---select * from student3 where math>80;
+
+6. 条件查询(age>35且性别为男) ---select * from student3 where age>35 and sex = '男';
+
+7. 条件查询(age>35或者性别为男) ---select * from student3 where age>35 or sex= '男';
+
+8. 条件查询(id是1或3或5)的学生 ---select * from student3 where id=1 or id=3 or id=5;
+
+   ​													---select * from student2 where id in (1, 3, 5);
+
+9. 
+
+   ​												    
+
+   
+
+   
+
+   
+
 ​    
 
 ​    
