@@ -189,13 +189,42 @@ MYSQL
   SELECT AVG(math) FROM student3;
   ```
 
-  
 
-​												    
 
-​    
+##### 	4、分组
 
-​    
+​	    分组查询是指使用**Group by**语句对查询信息进行分组, 相同数据作为一组, 并且返回**每组的第一条数据**,所以单独分组没什么用途, 分组的目的就是为了统计, 一般分组会跟聚合函数一起使用.
+
+```mysql
+select * from 表名 GROUP BY 分组字段 [having 条件]
+// 根据sex分组 计算每组math的总成绩
+SELECT *, SUM(math) FROM student3 GROUP BY sex;
+// 根据sex分组, 计算每组的总数
+SELECT COUNT(*), sex FROM student3 GROUP BY sex;
+// 1.先过滤掉年龄小于25的 2.根据sex分组 3.最后统计每组的人数
+SELECT sex, COUNT(*) FROM student3 WHERE age > 25 GROUP BY sex;
+// 1.先过滤掉年龄小于25的 2.根据sex分组 3.最后统计每组的人数 4.只显示人数大于2的那一组
+SELECT sex, COUNT(*) total FROM student3 WHERE age > 25 GROUP BY sex HAVING COUNT(*) >2
+```
+
+​    **having和where的区别**
+
+- having是在分组后对数据进行过滤, 写在group by的后面
+- where是在分组前对数据进行过滤, 写在group by的前面
+- having后面可以使用聚合函数
+- where后面不可以使用聚合函数
+
+
+
+##### 5、limit分页
+
+```
+
+```
+
+
+
+
 
 ​    
 
