@@ -1,4 +1,4 @@
-### 									MYSQL
+MYSQL
 
 #### 一、基本概念
 
@@ -125,15 +125,75 @@
 
    ​													---select * from student2 where id in (1, 3, 5);
 
-9. 
+9. 条件查询(id不是1或3或5)  ---select * from student3 where **not**(id in(1, 3, 5));
 
-   ​												    
+10. 条件查询范围(between and) ---SELECT * FROM student3 WHERE English>=75 AND English <=90;
 
-   
+11. 条件查询(模糊查询 like) ---SELECT * FROM student3 WHERE NAME LIKE '马%';
 
-   
+    
 
-   
+#### 四、多表查询
+
+#####     1、排序 
+
+​		**order by xxx desc/asc**
+
+##### 	2、组合排序
+
+​	先按照第一个字段进行排序,如果第一个字段相同,才安装第二个字段进行排序
+
+​	select * from student3 where 字段=值 order by 字段名1 [asc|desc], 字段名2 [asc|desc]
+
+​	SELECT * FROM student3 WHERE age > 20 ORDER BY math ASC, english ASC;
+
+##### 	3、聚合函数 
+
+​	之前的查询都是横向查询,都是根据条件一行一行的进行判断, 而使用聚合函数查询是纵向查询, 对一列的值进行计算,然后返回一个结果
+
+- **count** 统计指定列记录数, 记录为NULL的不统计
+
+  ```mysql
+  SELECT COUNT(english) FROM student3;
+  // 为了避免把值为null的统计掉
+  SELECT COUNT(IFNULL(english, 0)) FROM student3;
+  // 带条件的
+  SELECT COUNT(*) FROM student3 WHERE age > 40;
+  ```
+
+- **sum** 计算指定列的数值和, 如果不是数值类型, 那么结果为0
+
+  ```mysql
+  // 计算math这一列加起来的总和
+  SELECT SUM(math) FROM student3;
+  ```
+
+- **max** 计算指定列的最大值
+
+  ```mysql
+  // 计算数学成绩的最高分
+  SELECT MAX(math) FROM student3;
+  ```
+
+- **min** 计算指定列的最小值
+
+  ```mysql
+  // 计算数学成绩的最低分
+  SELECT MIN(math) FROM student3;
+  ```
+
+- **avg**  计算指定列的平均值
+
+  ```mysql
+  // 计算数学成绩的平均分
+  SELECT AVG(math) FROM student3;
+  ```
+
+  
+
+​												    
+
+​    
 
 ​    
 
