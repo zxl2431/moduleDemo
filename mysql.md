@@ -218,17 +218,32 @@ SELECT sex, COUNT(*) total FROM student3 WHERE age > 25 GROUP BY sex HAVING COUN
 
 ##### 5、limit分页
 
+**limit offset, length**或者**limit length**
+
+```mysql
+select * from 表名 [where 条件] [group by 字段] [having 子句条件] [order by 字段] [limit子句] 
+// 
+SELECT * FROM student3 LIMIT 2,6;
+// 使用limit获取年龄最大的学生信息
+SELECT * FROM student3 ORDER BY age DESC LIMIT 0,1;
 ```
 
+
+
+#### 五、数据库备份与还原
+
+##### 1、数据库备份
+
+```mysql
+mysqldump -uroot -proot db1 > E:\sqlbak\db1.sql
 ```
 
+##### 5、数据库还原
 
-
-
-
-​    
-
-​    
-
-
+```
+mysql -uroot -proot
+use db2;
+select database();
+source E:\sqlbak\db2.sql
+```
 
