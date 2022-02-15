@@ -240,10 +240,54 @@ mysqldump -uroot -proot db1 > E:\sqlbak\db1.sql
 
 ##### 5、数据库还原
 
-```
+```mysql
 mysql -uroot -proot
 use db2;
 select database();
 source E:\sqlbak\db2.sql
 ```
+
+
+
+#### 六、数据库约束
+
+##### 1、约束的种类
+
+- **PRIMARY KEY 主键**  主键必须包含唯一的值 && 主键列不能包含NULL值
+- **UNIQUE 唯一**
+- **NOT NULL 非空**
+- **DEFAULT 默认**
+- **FOREIGN KEY 外键**
+
+
+
+##### 2、主键
+
+###### 2.1、主键的作用
+
+​	用来唯一标识一条记录, 每个表都应该有一个主键,并且每个表只能有一个主键. 通常不用业务字段作为主键,单独给每张表设计一个id字段, 把id作为主键.
+
+###### 2.2、主键的创建方式
+
+- 在创建表的时候给字段添加主键 --字段名 字段类型 PRIMARY KEY
+
+- 主键自增 auto_increment 
+
+- 在已有表中添加主键 -- ALTER TABLE 名表 ADD PRIMARY KEY (字段名)
+
+- 删除主键 --ALTER TABLE 表名 DROP PRIMARY KEY 
+
+  
+
+```mysql
+CREATE TABLE st5(
+ id INT PRIMARY KEY,
+ NAME VARCHAR(20),
+ age INT
+)
+```
+
+
+
+##### 3、唯一
 
