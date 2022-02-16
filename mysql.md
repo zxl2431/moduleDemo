@@ -359,3 +359,26 @@ INSERT INTO st9 VALUES (2, '张学友', '香港');
   
 
 ##### 5、外键 
+
+###### 	5.1 为什么需要外键
+
+​	一张表不足于描述 或则换一种表述方式一张表描述起来字段太多有冗余
+
+```mysql
+CREATE TABLE emp(
+id INT PRIMARY KEY AUTO_INCREMENT,
+NAME VARCHAR(30),
+age INT,
+dep_name VARCHAR(30),
+dep_location VARCHAR(30)
+)
+
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('张三', 20, '研发部', '广州'); 
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('李四', 21, '研发部', '广州');
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('王五', 20, '研发部', '广州'); 
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('老王', 20, '销售部', '深圳'); 
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('大王', 22, '销售部', '深圳'); 
+INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('小王', 18, '销售部', '深圳');
+```
+
+​	明显表中有重复数据, 如果需要改一下部门位置那需要改三个地方
