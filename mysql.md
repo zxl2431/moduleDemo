@@ -291,3 +291,71 @@ CREATE TABLE st5(
 
 ##### 3、唯一
 
+###### 3.1 唯一约束的作用
+
+​	设置某一列唯一约束, 不能出现重复的值
+
+```mysql
+CREATE TABLE st7 (
+id INT, 
+nama VARCHAR(20) UNIQUE
+)
+
+// 因为null是没有值,所以不存在重复的问题
+INSERT INTO st7 VALUES (6, NULL); 
+INSERT INTO st7 VALUES (7, NULL);
+
+```
+
+
+
+##### 4、非空
+
+###### 4.1 非空约束的作用
+
+​	设置某一列必须设置值, 不能是NULL
+
+```mysql
+CREATE TABLE st8(
+ id INT, 
+ NAME VARCHAR(20) NOT NULL,
+ gender CHAR(2)
+)
+
+// '' 这个是可以的
+INSERT INTO st8 VALUES (4, '', '男');
+// null是不行的
+INSERT INTO st8 VALUES (4, NULL, '男');
+
+```
+
+###### 4.2 默认值
+
+​	在往表中添加数据时, 如果不指定这个字段的数据,就使用默认值
+
+```mysql
+CREATE TABLE st9(
+id INT, 
+NAME VARCHAR(20),
+address VARCHAR(50) DEFAULT '广州'
+);
+
+SELECT * FROM st9;
+
+INSERT INTO st9 (id, NAME) VALUES (1, '刘德华');
+INSERT INTO st9 VALUES (2, '张学友', '香港');
+```
+
+
+
+**非空+唯一 VS 主键的区别**
+
+- 一张表只有一个字段可以设置为主键
+
+- 一张表可以多个字段非空与唯一约束
+
+- 主键可以自动增长, 非空与唯一约束的字段不能自动增长
+
+  
+
+##### 5、外键 
