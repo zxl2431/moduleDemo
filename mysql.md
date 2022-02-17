@@ -381,4 +381,69 @@ INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('大王', 22, '销�
 INSERT INTO emp (NAME, age, dep_name, dep_location) VALUES ('小王', 18, '销售部', '深圳');
 ```
 
-​	明显表中有重复数据, 如果需要改一下部门位置那需要改三个地方
+​	明显表中有重复数据, 如果需要改一下部门位置那需要改三个地方, 可以拆成两张表员工表和部门表
+
+```mysql
+// 创建部门表
+CREATE TABLE department(
+id INT PRIMARY KEY AUTO_INCREMENT,
+dep_name VARCHAR(20),
+dep_location VARCHAR(20)
+)
+
+// 创建员工表
+CREATE TABLE employee(
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ NAME VARCHAR(20),
+ age INT, 
+ dep_id INT
+)
+
+--插入数据
+INSERT INTO department (dep_name, dep_location) VALUES ('研发部', '广州'), ('销售部', '深圳');
+
+INSERT INTO employee (NAME, age, dep_id) VALUES
+('张三', 20, 1), 
+('李四', 21, 1), 
+('王五', 20, 1), 
+('老王', 20, 2), 
+('大王', 22, 2),
+('小王', 18, 2);
+```
+
+###### 5.2 、什么是外键约束
+
+​	**一张表的某个字段引用另一个表的主键** 
+
+​	**主键**: 约束别人 department  **副表**: 使用别人的数据 被别人约束
+
+###### 5.3、创建外键
+
+​	新增表时:	[constraint] [外键约束名称] foreign key(外键字段名) references 主表名(主键字段名)
+
+​    已有表时: alter table 从表 add [constraint] [外键约束名称] foreign key(外键字段名) references 主表名(主键字段名)
+
+```mysql
+CREATE TABLE employee (
+ id INT PRIMARY KEY AUTO_INCREMENT, 
+ NAME VARCHAR(20),
+ age INT, 
+ dep_id INT, 
+ -- 添加一个外键
+ CONSTRAINT emp_depid_ref_dep_id_fk FOREIGN KEY(dep_id) REFERENCES department(id)
+);
+
+-- 插入报错 因为department表中没有 id=3的部门 
+INSERT INTO employee(NAME, age, dep_id) VALUES ('瞎混', 56, 3)
+```
+
+###### 5.4 删除外键
+
+```mysql
+-- 删除外键
+ALTER TABLE employee DROP FOREIGN KEY emp_depid_ref_dep_id_fk; 
+
+-- 添加外键
+ALTER TABLE employee ADD CONSTRAINT emp_depid_ref_dep_id_fk FOREIGN KEY(dep_id) REFERENCES department(id);
+```
+
