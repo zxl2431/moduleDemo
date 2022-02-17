@@ -360,7 +360,7 @@ INSERT INTO st9 VALUES (2, '张学友', '香港');
 
 ##### 5、外键 
 
-###### 	5.1 为什么需要外键
+###### 	5.1 、为什么需要外键
 
 ​	一张表不足于描述 或则换一种表述方式一张表描述起来字段太多有冗余
 
@@ -417,7 +417,7 @@ INSERT INTO employee (NAME, age, dep_id) VALUES
 
 ​	**主键**: 约束别人 department  **副表**: 使用别人的数据 被别人约束
 
-###### 5.3、创建外键
+###### 5.3 、创建外键
 
 ​	新增表时:	[constraint] [外键约束名称] foreign key(外键字段名) references 主表名(主键字段名)
 
@@ -437,7 +437,7 @@ CREATE TABLE employee (
 INSERT INTO employee(NAME, age, dep_id) VALUES ('瞎混', 56, 3)
 ```
 
-###### 5.4 删除外键
+###### 5.4 、删除外键
 
 ```mysql
 -- 删除外键
@@ -445,5 +445,62 @@ ALTER TABLE employee DROP FOREIGN KEY emp_depid_ref_dep_id_fk;
 
 -- 添加外键
 ALTER TABLE employee ADD CONSTRAINT emp_depid_ref_dep_id_fk FOREIGN KEY(dep_id) REFERENCES department(id);
+```
+
+###### 5.5 外键的级联 
+
+​	有外键约束的情况下, 如果副表中引用的数据, 不能直接修改主表主键.
+
+​	**级联操作**: 在修改和删除主表主键时, 同时更新或者删除副表的外键值 称为级联操作 
+
+- on update cascade --级联更新 主键发生更新时 外键也会更新
+- on delete cascade -- 级联删除 主键发生删除时 外键也会删除
+
+```mysql
+-- 这个不行 因为在employee表中已经引用了department中的主键id 
+UPDATE department SET id=5 WHERE id=2;
+DELETE FROM department WHERE id=1;
+
+-- 删除外键
+ALTER TABLE employee DROP FOREIGN KEY emp_depid_ref_dep_id_fk; 
+
+-- 添加外键 增加级联操作
+ALTER TABLE employee ADD CONSTRAINT emp_depid_ref_dep_id_fk FOREIGN KEY(dep_id) REFERENCES department(id)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+-- 现在就可以更新主表的主键
+UPDATE department SET id=5 WHERE id=2;
+DELETE FROM department WHERE id=1;
+```
+
+
+
+#### 七、表关系
+
+##### 1、表关系的概念
+
+- 一对一 : 老公对老婆
+- 一对多 : 班级对学生, 部门对员工, 客户对订单 建表原则: 在对方(从表)创建一个字段作为外键指向一方(主表)的主键
+- 多对多 : 老师对学生, 学生对课程, 用户对角色 建表原则: 需要创建第三张表, 中间表至少有两个字段,这两个字段分别作为外键指向两张表的主键.  
+
+##### 2、检查外键的配置项
+
+```mysql
+-- 删除表 删除不掉
+DROP TABLE tab_route;
+-- 查看检查外键配置项
+SHOW VARIABLES LIKE "foreign%";
+-- 关闭外键约束检查
+SET FOREIGN_KEY_CHECKS = 0;
+-- 开启外键约束检查
+SET FOREIGN_KEY_CHECKS = 0;
+```
+
+
+
+##### 3、一对多练习
+
+```mysql
+
 ```
 
