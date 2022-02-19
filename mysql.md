@@ -501,6 +501,75 @@ SET FOREIGN_KEY_CHECKS = 0;
 ##### 3、一对多练习
 
 ```mysql
+-- 创建旅游线路分类表
+CREATE TABLE tab_category (
+  -- 旅游线路分类主键
+  cid INT PRIMARY KEY AUTO_INCREMENT,
+  -- 旅游 
+  cname VARCHAR(100) NOT NULL UNIQUE 
+);
+
+INSERT INTO tab_category (cname) VALUES ('周边游'), ('出境游'), ('国内游'), ('港澳游');
+
+
+-- 创建旅游线路表
+CREATE TABLE tab_route(
+  rid INT PRIMARY KEY AUTO_INCREMENT, -- 旅游线路主键 
+  rname VARCHAR(100) NOT NULL UNIQUE, -- 旅游线路名称 
+  price DOUBLE NOT NULL, -- 价格 
+  routeIntroduce VARCHAR(200), -- 线路介绍 
+  rflag CHAR(1) NOT NULL, -- 是否上架 
+  rdate VARCHAR(19) NOT NULL, -- 上架时间 
+  isThemeTour CHAR(1) NOT NULL, -- 是否主题旅游 
+  acount INT DEFAULT 0, -- 收藏数量 
+  cid INT NOT NULL, -- 所属分类 
+  rimage VARCHAR(200) NOT NULL, -- 缩略图地址
+  CONSTRAINT ro_cid_ref_cate_id FOREIGN KEY(cid) REFERENCES tab_category(cid)
+);
+
+
+INSERT INTO tab_route VALUES 
+(NULL, '【厦门+鼓浪屿+南普陀寺+曾厝垵 高铁3天 惠贵团】尝味友鸭面线 住1晚鼓浪屿', 1499, '春节国内游优 惠：即日起至2018年1月31号，5-9人同时报名立减￥100/人，10人及以上同时报名立减￥150/人。仅限2月10-22日春 节期间出发享优惠，自由行及特价产品不参与！', 1, '2018-01-27', 0, 100, 3, 'c:\1.png'), 
+(NULL, '【浪漫桂林 阳朔西街高铁3天纯玩 高级团】城徽象鼻山 兴坪漓江 西山公园', 699, '春节国内游优惠：即 日起至2018年1月31号，5-9人同时报名立减￥100/人，10人及以上同时报名立减￥150/人。仅限2月10-22日春节期间 出发享优惠，自由行及特价产品不参与！', 1, '2018-01-27', 0, 66, 3, 'c:\2.png'), 
+(NULL, '【爆款￥1699秒杀】泰国 曼谷 芭堤雅 金沙岛 杜拉拉水上市场 双飞六天【含送签费 泰风情 广州往返 特价 团】', 1699, '1月15日至2月11日官网特卖！①出境全线正价线路（特价线除外）满2人立减￥60！满4人立减￥200！ 满5人立减￥500！', 1, '2018-01-27', 0, 15, 2, 'c:\123.png'), 
+(NULL, '【经典·狮航 ￥2399秒杀】巴厘岛双飞五天 抵玩【广州往返 特价团】', 2399, '官网特卖！2-3月出发，前 10名网付立享￥2399/人！', 1, '2018-01-27', 0, 22, 2, 'c:\3.png'), 
+(NULL, '香港迪士尼乐园自由行2天【永东跨境巴士广东至迪士尼去程交通+迪士尼一日门票+香港如心海景酒店暨会议 中心标准房1晚住宿】', 799, '永东巴士提供广东省内多个上车地点，购买后需自行致电永东巴士客服电话 4008861668预约车位', 1, '2018-01-27', 0, 38, 4, 'c:\4.png');
+
+-- 用户表
+CREATE TABLE tab_user ( 
+ uid INT PRIMARY KEY AUTO_INCREMENT, -- 用户id 
+ username VARCHAR(100) NOT NULL UNIQUE, -- 用户名 
+ PASSWORD VARCHAR(30) NOT NULL, -- 密码 
+ NAME VARCHAR(100), -- 真实姓名 
+ birthday DATE, -- 生日 
+ sex CHAR(1), -- 性别 
+ telephone VARCHAR(11), -- 手机号 
+ email VARCHAR(100), -- 邮箱 
+ STATUS CHAR(1) NOT NULL, -- 是否激活状态 
+ CODE VARCHAR(32) NOT NULL UNIQUE -- 激活码 
+ );
+ 
+ -- 插入用户名
+ INSERT INTO tab_user VALUES 
+ (NULL, 'cz110', 123456, '老王', '1977-07-07', '男', '13888888888', '66666@qq.com', '是', '1386'), 
+ (NULL, 'cz119', 654321, '小王', '1999-09-09', '男', '13999999999', '99999@qq.com', '是', '9898');
+ 
+ -- 收藏表
+ CREATE TABLE tab_favorite ( 
+     fid INT PRIMARY KEY AUTO_INCREMENT, -- 收藏主键 
+     rid INT NOT NULL, -- 旅游线路id 
+     DATE DATE NOT NULL, -- 收藏时间 
+     uid INT NOT NULL -- 用户id 
+ );
+ 
+ -- 插入收藏表数据 
+ INSERT INTO tab_favorite VALUES 
+ (NULL, 1, '2018-01-01', 1), -- 老王选择厦门 
+ (NULL, 1, '2018-01-01', 2), -- 老王选择桂林 
+ (NULL, 1, '2018-01-01', 3), -- 老王选择泰国 
+ (NULL, 2, '2018-01-01', 2), -- 小王选择桂林 
+ (NULL, 2, '2018-01-01', 3), -- 小王选择泰国 
+ (NULL, 2, '2018-01-01', 5); -- 小王选择迪士尼
 
 ```
 
