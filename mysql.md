@@ -609,15 +609,17 @@ SELECT * FROM dept LEFT OUTER JOIN emp ON emp.`dept_id` = dept.`id`;
 
 ##### 4、右外连接
 
-​	在内连接的基础上保证有表的数据全部显示
+​	在内连接的基础上**保证有表的数据全部显示**
 
+```mysql
+SELECT * FROM dept RIGHT OUTER JOIN emp ON emp.`dept_id`=dept.`id`;
 ```
 
-```
+
+
+#### 九、子查询
 
 
 
 
-
-#### 九、事务
 
