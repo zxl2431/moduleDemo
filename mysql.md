@@ -573,3 +573,51 @@ CREATE TABLE tab_user (
 
 ```
 
+
+
+#### 八、多表查询
+
+##### 	1、笛卡尔积现象
+
+​	左边的每条数据和右表的每条数据组合, 这种效果成为笛卡尔积
+
+```mysql
+SELECT COUNT(*) FROM dept; -- 3条数据
+SELECT COUNT(*) FROM emp;  -- 5条数据
+SELECT COUNT(*) FROM dept, emp;   -- 15条数据
+```
+
+##### 	2、内连接
+
+​	用左边表的记录去匹配右边表的记录, 如果符合条件的则显示
+
+```mysql
+-- 显示内连接
+SELECT * FROM dept INNER JOIN emp ON emp.`dept_id`= dept.`id`;
+
+-- 隐式内连接
+SELECT * FROM dept, emp WHERE dept.`id` = emp.`dept_id`;
+```
+
+##### 	3、左外连接
+
+​	在内连接的基础上**保证左表的数据全部显示**
+
+```mysql
+SELECT * FROM dept LEFT OUTER JOIN emp ON emp.`dept_id` = dept.`id`;
+```
+
+##### 4、右外连接
+
+​	在内连接的基础上保证有表的数据全部显示
+
+```
+
+```
+
+
+
+
+
+#### 九、事务
+
