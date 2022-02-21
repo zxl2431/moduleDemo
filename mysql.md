@@ -667,6 +667,21 @@ salarygrade.`hisalary` AND
 job.`jname`='经理';
 
 
+-- 查询出部门编号、部门名称、部门位置、部门人数
+SELECT  dept.`id`, dept.`dname`, dept.`loc`, COUNT(*) 
+FROM emp, dept WHERE emp.`dept_id` = dept.`id` GROUP BY dept_id;
+
+SELECT * FROM dept d INNER JOIN (SELECT dept_id, COUNT(*) FROM emp GROUP BY dept_id) e ON e.dept_id = d.`id`;
+
+-- 查询所有员工信息。显示员工信息和部门名称，没有员工的部门也要显示
+SELECT * FROM dept LEFT JOIN emp ON dept.`id` = emp.`dept_id`;
+
+-- 查询所有员工信息。显示员工姓名，员工工资，职务名称，工资等级，并按工资升序排序
+SELECT * FROM emp, job, salarygrade WHERE 
+emp.`job_id`=job.id AND 
+emp.`salary` BETWEEN salarygrade.`losalary` AND salarygrade.`hisalary`
+ORDER BY emp.`salary` ASC;
+
 
 ```
 
