@@ -619,7 +619,54 @@ SELECT * FROM dept RIGHT OUTER JOIN emp ON emp.`dept_id`=dept.`id`;
 
 #### 九、子查询
 
+```mysql
+-- 子查询的结果是单列
+SELECT MAX(salary) FROM emp;
+SELECT * FROM emp WHERE salary=(SELECT MAX(salary) FROM emp);
+
+SELECT AVG(salary) FROM emp;
+SELECT * FROM emp WHERE salary<(SELECT AVG(salary) FROM emp);
+
+-- 子查询的结果是单列多行 
+SELECT dept_id FROM emp WHERE salary > 5000;
+SELECT dept.name FROM dept WHERE dept.id IN (SELECT dept_id FROM emp WHERE salary > 5000);
+
+SELECT id FROM dept WHERE NAME IN ('开发部', '财务部');
+SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME IN ('开发部', '财务部'));
+
+
+-- 子查询的结果是多行多列(只要只查询的结果是多列,肯定是在from后面作为表)
+SELECT * FROM emp WHERE join_date > '2011-1-1';
+SELECT * FROM dept d, (SELECT * FROM emp WHERE join_date > '2011-1-1') e WHERE e.dept_id = d.`id`;
+```
 
 
 
+#### 十、多表查询练习
+
+```mysql
+-- 查询所有员工信息。显示员工编号，员工姓名，工资，职务名称，职务描述
+SELECT * FROM emp, job WHERE emp.`job_id` = job.`id`;
+SELECT * FROM emp e INNER JOIN job j ON e.`job_id`=j.`id`;
+
+-- 查询所有员工信息。显示员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置
+SELECT * FROM emp, job, dept WHERE emp.`dept_id`= dept.id AND emp.`job_id` = job.`id`;
+
+-- 查询所有员工信息。显示员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+SELECT * FROM emp, job, dept, salarygrade WHERE 
+emp.`dept_id`=dept.`id` AND emp.`job_id`=job.`id` 
+AND emp.`salary` BETWEEN salarygrade.`losalary` AND salarygrade.`hisalary`; 
+
+
+-- 查询经理的信息。显示员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+SELECT * FROM emp, job, dept, salarygrade WHERE 
+emp.`job_id` = job.`id` AND 
+emp.`dept_id` = dept.`id` AND 
+emp.`salary` BETWEEN salarygrade.`losalary` AND 
+salarygrade.`hisalary` AND
+job.`jname`='经理';
+
+
+
+```
 
