@@ -700,3 +700,32 @@ e1.salary BETWEEN salary.`losalary` AND salary.`hisalary` AND
 e1.salary > (SELECT AVG(salary) FROM emp);
 ```
 
+
+
+#### 十一、事务安全
+
+##### 1、事务由来
+
+​	一个业务要发送多条SQL语句给数据库执行, 需要将这多次访问看作一个整体, 要么全部失败,要么全部成功.
+
+##### 2、操作事务
+
+```mysql
+-- 1.手动提交事务
+-- 开启事务
+start transaction;
+-- 提交事务
+commit;
+-- 回滚事务
+rollback;
+
+-- 2.自动提交事务
+-- mysql的每一条DML(增删改)语句都是一个单独的事务, 每条语句都会自动开启一个事务,执行完毕自动提交
+-- 查看全局变量
+SHOW VARIABLES LIKE '%commit%';
+-- 关闭自动提交
+SET autocommit = 0;
+-- 打开自动提交
+SET autocommit = 1;
+```
+
