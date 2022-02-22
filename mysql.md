@@ -682,6 +682,21 @@ emp.`job_id`=job.id AND
 emp.`salary` BETWEEN salarygrade.`losalary` AND salarygrade.`hisalary`
 ORDER BY emp.`salary` ASC;
 
+-- 列出所有员工的姓名及其直接上级的姓名,没有领导的员工也需要显示
+SELECT * FROM emp e1, emp e2 WHERE e1.mgr = e2.`id`;
+SELECT * FROM emp e1 LEFT JOIN  emp e2 ON e1.mgr = e2.`id`;
 
+SELECT e1.`ename`, IFNULL(e2.`ename`, '没有') 上司 FROM emp e1 LEFT JOIN  emp e2 ON e1.mgr = e2.`id`; 
+
+
+-- 查询入职期早于直接上级的所有员工编号、姓名、部门名称
+SELECT * FROM emp e1, emp e2, dept d WHERE e1.`mgr`= e2.`id` AND e1.`joindate` < e2.`joindate` AND e1.`dept_id`=d.`id`;
+
+-- 查询工资高于公司平均工资的所有员工信息。显示员工信息，部门名称，上级领导，工资等级
+SELECT * FROM emp e1, emp e2, dept d, salarygrade salary 
+WHERE e1.dept_id=d.id AND 
+e1.mgr = e2.id AND
+e1.salary BETWEEN salary.`losalary` AND salary.`hisalary` AND 
+e1.salary > (SELECT AVG(salary) FROM emp);
 ```
 
