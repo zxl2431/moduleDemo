@@ -784,6 +784,65 @@ commit;
 
 
 ```mysql
+-- 查询全局事务隔离级别
+show variable like '%isolation%'
+
+-- 设置事务隔离级别 要退出mysql再进才能看到
+set global transaction isolation level 级别字符串;（修改全局的，不建议） 
+set session transaction isolation level 隔离级别;(修改当次)
+```
+
+
+
+#### 十二、DCL 数据库控制语句
+
+##### 1、创建用户
+
+```mysql
+-- create user '用户名'@'主机名' identified by '密码'
+-- 主机名: 指定用户从那台主机上登录, 如果是本地用户可可以localhost, 远程的可以使用通配符%
+
+-- user1用户只能在localhost这个IP登录mysql服务器 
+CREATE USER 'user1'@'localhost' IDENTIFIED BY '123'; 
+-- user2用户可以在任何电脑上登录mysql服务器 
+CREATE USER 'user2'@'%' IDENTIFIED BY '123';
+```
+
+
+
+##### 2、授权用户
+
+​	新创建的用户基本没什么权限
+
+```mysql
+-- 授权用户
+-- GRANT 权限1, 权限2... ON 数据库名.表名 TO '用户名'@'主机名';
+-- 给user1用户分配对test这个数据库操作的权限
+GRANT CREATE,ALTER,DROP,INSERT,UPDATE,DELETE,SELECT ON test.* TO 'user1'@'localhost';
+-- 给user2用户分配对所有数据库操作的权限
+GRANT ALL ON *.* TO 'user2'@'%';
+
+-- 撤销权限
+-- REVOKE 权限1, 权限2... ON 数据库名.表名 TO '用户名'@'主机名';
+-- 撤销user1用户对test操作的权限
+REVOKE ALL ON test.* FROM 'user1'@'localhost';
+
+-- 查看权限
+-- show GRANTS FOR '用户名'@'主机名';
+-- 查看user1用户的权限
+SHOW GRANTS FOR 'user1'@'localhost';
+
+-- 删除用户
+-- DROP USER '用户名'@'主机名';
+DROP USER 'user2'@'%';
+
+-- 修改用户密码
+-- 修改管理员密码 mysqladmin -uroot -p password 新密码 -- 新密码不需要加上引号
+mysqladmin -uroot -p password 123456 
+-- 输入老密码
+
+-- 修改普通用户密码
+set password for 'user1'@'localhost' = password('666666');
 
 ```
 
