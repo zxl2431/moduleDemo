@@ -1,3 +1,5 @@
+
+
 MYSQL
 
 #### 一、基本概念
@@ -727,5 +729,61 @@ SHOW VARIABLES LIKE '%commit%';
 SET autocommit = 0;
 -- 打开自动提交
 SET autocommit = 1;
+```
+
+##### 3、事务原理
+
+​        事务开启之后,所有的操作都会临时保存到**事务日志**, 事务日志只有在得到commit命令才会同步到数据库表中,其他情况都会清空事务日志(rollback, 断开连接)
+
+##### 4、回滚点
+
+```mysql
+-- 开启事务
+start transaction
+-- 扣钱三次
+UPDATE account SET balance = balance - 100 WHERE id=1;
+UPDATE account SET balance = balance - 100 WHERE id=1;
+UPDATE account SET balance = balance - 100 WHERE id=1;
+-- 设置回滚点
+savepoint abc;
+-- 继续扣钱三次
+UPDATE account SET balance = balance - 100 WHERE id=1;
+UPDATE account SET balance = balance - 100 WHERE id=1;
+UPDATE account SET balance = balance - 100 WHERE id=1;
+-- 回到回滚点
+rollback to abc;
+-- 提交
+commit;
+
+```
+
+##### 5、事务的四大特性
+
+| 事务特性            | 含义                                                         |
+| ------------------- | :----------------------------------------------------------- |
+| 原子性(Atomicity)   | 事务是一个不可分割的工作单位,要么都成功要么都失败            |
+| 一致性(Consistency) | 事务前后数据的完整性必须保持一致                             |
+| 隔离性(Isolation)   | 多个用户并发访问数据库时,一个用户的事务不能被其他用户的事务所干扰,多个并发事务之间数据要隔离 |
+| 持久性(Durability)  | 一个事务一旦被提交,它对数据库的改变是永久性的                |
+
+##### 6、事务的隔离级别
+
+| 并发访问   | 含义                                                         |
+| ---------- | ------------------------------------------------------------ |
+| 脏读       | 一个事务读取到了另一个事务中尚未提交的数据                   |
+| 不可重复读 | 一个事务中两次读取的数据内容不一致,要求的是一个事务中多次读取时数据是一致的,这是事务update引起的 |
+| 幻读       | 一个事务中两次读取的数据的数量不一致, 要求在一个事务多次读取的数据的数量是一致的,这是insert或者delete引发的 |
+
+| 级别 | 名字     | 隔离级别         | 脏读 | 不可重复读 | 幻读 | 数据库默认隔离级别   |
+| ---- | -------- | ---------------- | ---- | ---------- | ---- | -------------------- |
+| 1    | 读未提交 | read uncommitted | 是   | 是         | 是   |                      |
+| 2    | 读以提交 | read committed   | 否   | 是         | 是   | Oracle 和 SQL Server |
+| 3    | 可重复读 | repeatable read  | 否   | 否         | 是   | mysql                |
+| 4    | 串行化   | serializable     | 否   | 否         | 否   |                      |
+
+
+
+```mysql
+
 ```
 
