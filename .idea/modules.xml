@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JDBC_1/JDBC_1.iml" filepath="$PROJECT_DIR$/JDBC_1/JDBC_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" filepath="$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-object/base-object.iml" filepath="$PROJECT_DIR$/base-object/base-object.iml" />

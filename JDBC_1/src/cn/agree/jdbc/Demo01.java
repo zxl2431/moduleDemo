@@ -18,10 +18,23 @@ public class Demo01 {
         Statement stmt = connection.createStatement();
 
         // 1插入记录
-        String sql = "INSERT INTO category (cname) VALUES('手机');";
+        // String sql = "INSERT INTO category (cname) VALUES('手机');";
+        // int i = stmt.executeUpdate(sql);
+        // System.out.println("影响的条数:"+ i);
+
+        // 修改记录
+        // String sql = "UPDATE category set cname='汽车' where cid='4'";
+        // int i = stmt.executeUpdate(sql);
+        // System.out.println("影响的条数:"+ i);
+
+        // 3.删除记录
+        String sql = "DELETE from category where cid = 1;";
         int i = stmt.executeUpdate(sql);
         System.out.println("影响的条数:"+ i);
 
+        // 关闭资源
+        stmt.close();
+        connection.close();
 
     }
 }
