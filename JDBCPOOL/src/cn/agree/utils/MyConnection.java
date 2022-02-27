@@ -1,6 +1,7 @@
 package cn.agree.utils;
 
 import java.sql.*;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
@@ -8,6 +9,12 @@ import java.util.concurrent.Executor;
 public class MyConnection implements Connection {
 
     private Connection conn;
+    private LinkedList<Connection> pool;
+
+    public MyConnection(Connection conn, LinkedList<Connection> pool) {
+        this.conn = conn;
+        this.pool = pool;
+    }
 
     public MyConnection() {
     }
@@ -58,7 +65,7 @@ public class MyConnection implements Connection {
 
     @Override
     public void close() throws SQLException {
-
+        pool.addLast(this);
     }
 
     @Override
