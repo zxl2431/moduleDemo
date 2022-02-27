@@ -18,17 +18,17 @@ public class MyConnection implements Connection {
 
     @Override
     public Statement createStatement() throws SQLException {
-        return null;
+        return conn.createStatement();
     }
 
     @Override
     public PreparedStatement prepareStatement(String sql) throws SQLException {
-        return null;
+        return conn.prepareStatement(sql);
     }
 
     @Override
     public CallableStatement prepareCall(String sql) throws SQLException {
-        return null;
+        return conn.prepareCall(sql);
     }
 
     @Override

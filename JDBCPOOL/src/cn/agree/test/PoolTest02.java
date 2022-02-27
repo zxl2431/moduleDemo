@@ -3,6 +3,8 @@ package cn.agree.test;
 import cn.agree.utils.MyConnectionPool2;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PoolTest02 {
@@ -20,6 +22,16 @@ public class PoolTest02 {
         System.out.println(conn6);
 
         System.out.println("归还之前的连接数:"+ pool2.getCount());
+
+        String sql = "select * from user where id=?;";
+        PreparedStatement prestmt = conn1.prepareStatement(sql);
+        prestmt.setInt(1, 1);
+
+        ResultSet resultSet = prestmt.executeQuery();
+
+        if (resultSet.next()) {
+            System.out.println(resultSet.getString("name"));
+        }
 
         pool2.addBack(conn5);
         System.out.println("归还之后的连接数:"+pool2.getCount());
