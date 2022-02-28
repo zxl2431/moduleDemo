@@ -1,0 +1,36 @@
+<c3p0-config>
+    <!-- 使用默认的配置读取连接池对象 -->
+    <default-config>
+        <!--  连接参数 -->
+        <!--驱动类名-->
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <!--数据库的路径-->
+        <property name="jdbcUrl">jdbc:mysql:///db1</property>
+        <!--用户名-->
+        <property name="user">root</property>
+        <!--密码-->
+        <property name="password">root</property>
+
+        <!-- 连接池参数 -->
+        <!--初始化连接数-->
+        <property name="initialPoolSize">5</property>
+        <!--最大连接数-->
+        <property name="maxPoolSize">10</property>
+        <!--最大等待时间-->
+        <property name="checkoutTimeout">3000</property>
+    </default-config>
+    <!--命名配置-->
+    <!--<named-config name="itheimac3p0">-->
+        <!--&lt;!&ndash;  连接参数 &ndash;&gt;-->
+        <!--<property name="driverClass">com.mysql.jdbc.Driver</property>-->
+        <!--<property name="jdbcUrl">jdbc:mysql:///day17</property>-->
+        <!--<property name="user">root</property>-->
+        <!--<property name="password">root</property>-->
+
+        <!--&lt;!&ndash; 连接池参数 &ndash;&gt;-->
+        <!--<property name="initialPoolSize">5</property>-->
+        <!--<property name="maxPoolSize">15</property>-->
+        <!--<property name="checkoutTimeout">2000</property>-->
+        <!--<property name="maxIdleTime">1000</property>-->
+    <!--</named-config>-->
+</c3p0-config>
