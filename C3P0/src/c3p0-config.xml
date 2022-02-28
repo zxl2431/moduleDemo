@@ -15,7 +15,7 @@
         <!--初始化连接数-->
         <property name="initialPoolSize">5</property>
         <!--最大连接数-->
-        <property name="maxPoolSize">10</property>
+        <property name="maxPoolSize">9</property>
         <!--最大等待时间-->
         <property name="checkoutTimeout">3000</property>
     </default-config>
