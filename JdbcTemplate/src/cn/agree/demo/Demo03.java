@@ -17,7 +17,7 @@ public class Demo03 {
         // test03();
         // test04();
         // test05();
-        test06();
+        // test06();
     }
 
     // 查询返回的是一个整数
