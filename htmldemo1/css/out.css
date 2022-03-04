@@ -1,0 +1,26 @@
+/*标签选择器*/
+p {
+    color: gray;
+}
+
+div {
+    font-size: 40px;
+}
+
+/*类选择器*/
+.one {
+    color: blue;
+}
+
+.hello {
+    font-size: 50px;
+}
+
+/*id选择器*/
+#two {
+    font-family: 楷体;
+}
+
+#three {
+    font-size: 60px;
+}
