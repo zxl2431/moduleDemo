@@ -1,0 +1,58 @@
+table {
+    /*居中*/
+    margin: auto;
+    width: 300px;
+    height: 180px;
+    /* 宽度 线形 颜色 */
+    border: 1px solid gray;
+    padding: 0px;
+
+    /* 背景图片 */
+    background-image: url(../img/bg1.jpg);
+    border-radius: 10px;
+}
+
+td {
+    text-align: center;
+    font-size: 14px;
+}
+
+/*并集*/
+.user, .pwd {
+    /*宽150px，高32px，边框用实线，圆角5px，1个宽度，黑色*/
+    width: 150px;
+    height: 32px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/*伪类样式，当鼠标移动到文本框上的时候，变成虚线橙色边框。*/
+.user:hover, .pwd:hover {
+    border: 1px dashed orange;
+}
+
+/*得到焦点，背景色变成浅黄色*/
+.user:focus, .pwd:focus {
+    background-color: lightyellow;
+}
+
+
+.user {
+    background-image: url(../img/head.png);
+    /*不平铺*/
+    background-repeat: no-repeat;
+    /*左内边距32*/
+    padding-left: 32px;
+}
+
+.pwd {
+    background-image: url(../img/keyboard.png);
+    /*不平铺*/
+    background-repeat: no-repeat;
+    /*左内边距32*/
+    padding-left: 32px;
+}
+
+th {
+    font-size: 18px;
+}
