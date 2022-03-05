@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展选择器</title>
+
+
+    <style type="text/css">
+        /*层级选择器 父选择器下的所有子孙 */
+        div p {
+            color: blue;
+        }
+
+        /*属性选择器*/
+        input[type="text"] {
+            color: red;
+        }
+
+        /*伪类样式*/
+        a:link {
+            /*没有下划线*/
+            text-decoration: none;
+        }
+
+        /*访问过的*/
+        a:visited {
+            color: gray;
+        }
+
+        /*正在激活*/
+        a:active {
+            color: greenyellow;
+        }
+
+        /*鼠标悬停*/
+        a:hover {
+            color: red;
+        }
+
+        /*得到焦点*/
+        .user:focus {
+            background-color: yellow;
+        }
+
+        /*并集选择器*/
+        h3, p {
+            font-family: 隶书;
+        }
+
+
+    </style>
+</head>
+<body>
+<h3>扩展选择器</h3>
+
+<div>
+    <h2>
+        <p>我是段落</p>
+    </h2>
+</div>
+
+<p>我是第二段</p>
+
+文本框：
+<input type="text" value="张三疯" class="user"/><br/>
+<input type="button" value="李白"/>
+
+<hr/>
+<a href="#1">点我试试</a><br/>
+<a href="#2">点我试试</a><br/>
+<a href="#3">点我试试</a><br/>
+<a href="#4">点我试试</a><br/>
+
+</body>
+</html>
