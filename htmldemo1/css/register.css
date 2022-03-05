@@ -1,0 +1,119 @@
+/* 设置所有内外边距*/
+* {
+    margin: 0px;
+    padding: 0px;
+    /*边框的宽和高就是盒子的宽和高，不会因为内边距或内容的变大而撑大*/
+    box-sizing: border-box;
+}
+
+/* 白底的容器 */
+.rg_form {
+    width: 886px;
+    height: 534px;
+    background-color: white;
+    /* 上下外边距24，左右居中*/
+    margin: 24px auto;
+    border: 8px solid #eee;
+}
+
+/* 左边的"新用户注册"的容器 */
+.rg_form .rg_form_left {
+    width: 256px;
+    float: left;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* "新用户注册" 汉字 ，第1行p标签 */
+.rg_form > .rg_form_left > p:first-child {
+    font-size: 20px;
+    color: #ffcd26;
+}
+
+/* 新用户注册，第2行英文p标签 */
+.rg_form > .rg_form_left > p:last-child {
+    font-size: 20px;
+    color: #a6a6a6;
+}
+
+/* 中间注册窗体的容器 */
+.rg_form > .rg_form_center {
+    width: 358px;
+    float: left;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* 表格 */
+.rg_form > .rg_form_center > .rg_table {
+    margin-top: 25px;
+}
+
+/* 表单中左边的文字所在单元格 */
+.td_left {
+    width: 65px;
+    text-align: right;
+}
+
+/* 表单中右边输入框所在单元格 */
+.td_right {
+    width: 293px;
+    height: 50px;
+}
+
+/* 表单中的文本输入框 */
+input[type="text"], input[type="date"], input[type="password"] {
+    width: 256px;
+    /* 行高与高度相同，则表示垂直居中 */
+    height: 32px;
+    line-height: 32px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #a6a6a6;
+    float: right;
+}
+
+/* 性别 */
+.gender {
+    padding-left: 40px;
+}
+
+/* 验证码输入框 */
+.td_right > .check {
+    width: 118px;
+    float: left;
+    margin-right: 14px;
+    margin-left: 35px;
+}
+
+
+/* 提交按钮 */
+.td_right > .submit {
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffc900;
+    font-size: 14px;
+    /* 没有边框 */
+    border-style: none;
+}
+
+/* 右边的"已有账号"的容器 */
+.rg_form > .rg_form_right {
+    width: 256px;
+    float: right;
+}
+
+/* 右边的文字p标签 */
+.rg_form > .rg_form_right > p {
+    float: right;
+    font-size: 14px;
+    /* 上右下左*/
+    padding: 20px 12px 0 0;
+}
+
+/* a标签的文字，立即登录的文字 */
+.rg_form > .rg_form_right > p > a {
+    color: #fc8989;
+}
+

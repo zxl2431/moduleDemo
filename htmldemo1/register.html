@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="css/register.css" type="text/css"/>
+</head>
+<body>
+<!--白色容器-->
+<div class="rg_form">
+    <!--左边部分-->
+    <div class="rg_form_left">
+        <p>新用户注册</p>
+        <p>USER REGISTER</p>
+    </div>
+    <!--中间部分-->
+    <div class="rg_form_center">
+        <form action="#" method="get">
+            <!--表单部分:9行2列-->
+            <table class="rg_table">
+                <tr>
+                    <td class="td_left">
+                        <label for="user">用户名</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="user" name="user" placeholder="请输入账号">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="pwd">密码</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="password" id="pwd" name="pwd" placeholder="请输入密码">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="email">邮箱</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="email" name="email" placeholder="请输入Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="name">姓名</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" name="name" id="name" placeholder="请输入姓名">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="mobile">手机号</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" name="mobile" id="mobile" placeholder="请输入您的手机号">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        性别
+                    </td>
+                    <td class="td_right gender">
+                        <input type="radio" checked="checked" name="gender" id="male"><label for="male">男</label>&nbsp;
+                        <input type="radio" name="gender" id="female"><label for="female">女</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="birthday">生日</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="date" name="birthday" id="birthday" placeholder="年/月/日">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="vcode">验证码</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" class="check" name="vcode" id="vcode" placeholder="请输入验证码" maxlength="6">
+                        <img src="img/verify_code.jpg" height="32">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td class="td_right">
+                        <input type="button" value="注册" class="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!--右边部分-->
+    <div class="rg_form_right">
+        <p>
+            已有账号?
+            <a href="#">立即登录</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
