@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js计算</title>
+</head>
+<body>
+<script type="text/javascript">
+    //用户输入2个数
+    //window对象中的方法，弹出一个输入信息框，参数：信息提示，默认值，返回的是字符串类型
+    var num1 = window.prompt("请输入第1个数：", "0");
+    var num2 = window.prompt("请输入第2个数：", "0");
+    //对2个数求和，使用全局函数进行转换
+    var result = parseFloat(num1) + parseFloat(num2);
+
+    //输出结果到网页上
+    document.write(num1 + "+" + num2 + "=" + result);
+</script>
+
+</body>
+</html>

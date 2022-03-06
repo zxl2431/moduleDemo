@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数据转换</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var a = "123abc123"; //字符串类型
+        var i = parseInt(a);
+        document.write(i+"<br/>");
+
+        var b = "3.14abc123";
+        i = parseFloat(b);
+
+        document.write(i + "<br/>");
+
+        //判断字符串是否为纯数字字符组成
+        var age = "1012";
+        document.write("1012不是一个数字:"+isNaN(age)+"<br/>");   //不是一个数字字符， 返回true.
+        document.write("a不是一个数字:"+isNaN(a));
+    </script>
+
+</body>
+</html>
