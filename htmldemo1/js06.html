@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js乘法表</title>
+</head>
+<body>
+<script type="text/javascript">
+    var num = window.prompt("请输入乘法表的行数：", "9");
+    document.write("<table border='1' cellspacing='0'>");
+    document.write("<caption>9x9乘法表</caption>")
+    //写1个9x9乘法表，没有表格
+    for (var i = 1; i <= num; i++) {
+        //外循环就是一行
+        document.write("<tr>");
+        for(var j=1; j<=i; j++) {
+            document.write("<td>");
+            document.write(j + "x" + i+ "=" + (i*j));
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>
