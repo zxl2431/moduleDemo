@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计时器</title>
+
+    <style type="text/css">
+        #clock {
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var timer;
+
+        // 开始调用
+        function start() {
+            // 清理上一个定时器
+            window.clearInterval(timer);
+            // 1000毫秒调用begin()
+            timer = window.setInterval("begin()", 1000);
+        }
+
+        // 每隔一秒调用一次时间
+        function begin() {
+            var time = new Date();
+            var clock = document.getElementById("clock");
+            clock.innerHTML = time.toLocaleString();
+        }
+
+        // 暂停
+        function pause() {
+            // 清除计数器
+            window.clearInterval(timer);
+
+        }
+    </script>
+
+
+</head>
+<body>
+
+    <h1 id="clock">我是时间</h1>
+    <input type="button" value="开始" onclick="start()" />
+    <input type="button" value="暂停" onclick="pause()" />
+</body>
+</html>
