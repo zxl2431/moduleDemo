@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js正则表达式</title>
+
+    <script type="text/javascript">
+        var reg = new RegExp("\\d{3}")
+
+        var flag = reg.test("123");
+        document.write("结果:"+ flag + "<hr/>")
+
+        var reg = new RegExp("cat", "i");
+        var flag = reg.test("CAT");
+
+        document.write("结果:"+ flag);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

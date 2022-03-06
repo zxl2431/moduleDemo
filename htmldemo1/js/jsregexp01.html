@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校验表单</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            line-height: 20px;
+        }
+        .main {
+            width: 525px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hr_1 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #3275c3;
+            height: 35px;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            border-bottom-color: #3275c3;
+            vertical-align: bottom;
+            padding-left: 12px;
+        }
+        .left {
+            text-align: right;
+            width: 80px;
+            height: 25px;
+            padding-right: 5px;
+        }
+        .center {
+            width: 280px;
+        }
+        .in {
+            width: 130px;
+            height: 16px;
+            border: solid 1px #79abea;
+        }
+
+        .red {
+            color: #cc0000;
+            font-weight: bold;
+        }
+
+        div {
+            color: #F00;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // 验证表单中所有项
+        function checkAll() {
+            return checkUser() && checkMail();
+        }
+
+        // 验证用户名
+        function checkUser() {
+            // 1.创建正则表达式 ^以什么开头 $以什么结尾  {一共多少个字符}
+            var reg = /^[a-zA-Z][a-zA-Z0-9]{3,15}$/;
+            // 2.得到文本框的输入值
+            var value = document.getElementById("user").value;
+            // 3.如果不匹配 在后面span中显示错误信息 返回false
+            if(reg.test(value) == false) {
+                document.getElementById("userInfo").innerHTML = '用户名不正确';
+                return false;
+            } else {    // 匹配
+                document.getElementById("userInfo").innerHTML = "<img src='../img/gou.png' width='15' />";
+                return true;
+            }
+        }
+
+        // 验证邮箱
+        function checkMail() {
+            // 1.
+            var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+            //2. 得到文本框中输入的值
+            var value = document.getElementById("email").value;
+            //3. 如果不匹配，在后面的span中显示错误信息，返回false
+            if (reg.test(value)==false) {
+                document.getElementById("emailInfo").innerHTML = "邮箱格式不正确";
+                return false;
+            }
+            //4. 如果匹配，在后面的span中显示一个打勾图片，返回true
+            else {
+                document.getElementById("emailInfo").innerHTML = "<img src='../img/gou.png' width='15'/>";
+                return true;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<form action="server" method="post" id="myform" onsubmit="return checkAll()">
+    <table class="main" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td><img src="../img/logo.jpg" alt="logo" /><img src="../img/banner.jpg" alt="banner" /></td>
+        </tr>
+        <tr>
+            <td class="hr_1">新用户注册</td>
+        </tr>
+        <tr>
+            <td style="height:10px;"></td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <!-- 长度为4～16个字符，并且以英文字母开头 -->
+                        <td class="left">用户名：</td>
+                        <td class="center">
+                            <input id="user" name="user" type="text" class="in" onblur="checkUser()"/>
+                            <span style="color: red" id="userInfo"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- 不能为空， 输入长度大于6个字符 -->
+                        <td class="left">密码：</td>
+                        <td class="center">
+                            <input id="pwd" name="pwd" type="password" class="in" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- 不能为空， 与密码相同 -->
+                        <td class="left">确认密码：</td>
+                        <td class="center">
+                            <input id="repwd" name="repwd" type="password" class="in"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- 不能为空， 邮箱格式要正确 -->
+                        <td class="left">电子邮箱：</td>
+                        <td class="center">
+                            <input id="email" name="email" type="text" class="in" onblur="checkMail()"/>
+                            <span id="emailInfo" style="color: red;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- 不能为空， 使用正则表达式自定义校验规则,1开头，11位全是数字 -->
+                        <td class="left">手机号码：</td>
+                        <td class="center">
+                            <input id="mobile" name="mobile" type="text" class="in"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- 不能为空， 要正确的日期格式 -->
+                        <td class="left">生日：</td>
+                        <td class="center">
+                            <input id="birth" name="birth" type="text" class="in"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left">&nbsp;</td>
+                        <td class="center">
+                            <input name="" type="image" src="../img/register.jpg" />
+                        </td>
+                    </tr>
+                </table></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
