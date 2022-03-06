@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js内置对象</title>
+
+    <script type="text/javascript">
+        var a1 = [1, 1, 1];
+        var a2 = [2, 2];
+        //拼接，返回新的数组
+        var a3 = a1.concat(a2);
+        document.write("a3:  " + a3 + "<br/>");
+        //添加元素
+        var a4 = a3.concat(33, 44);
+        document.write("a4:  " + a4 + "<br />");
+        //反转
+        a4.reverse();
+        document.write("a4:  " + a4 + "<br />");
+
+        //将数组使用分隔符拼成一个字符串，功能上与split相反
+        var str = a4.join("^_^");
+        document.write("字符串：" + str + "<br/>");
+
+        //排序
+        //a) . 给字符串数组排序
+        var arr = ['jack', 'Rose', "Tom", "Jerry", "Kate"];
+        document.write("排序前：" + arr + "<hr />");
+        arr.sort();
+        document.write("排序后：" + arr + "<hr />");
+        //b). 字符串类型的数字排序
+        var arr = ["200", "3", "1234", "89", "21"];
+        document.write("排序前：" + arr + "<hr />");
+        arr.sort();
+        document.write("排序后：" + arr + "<hr />");
+        //c). 数字排序，默认也是按字符串的大小排序
+        var arr = [30,26,6,110,1234];
+        document.write("排序前：" + arr + "<hr />");
+        //排序器
+        arr.sort(function (m,n) {
+            return n-m;
+        });
+        document.write("排序后：" + arr + "<hr />");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

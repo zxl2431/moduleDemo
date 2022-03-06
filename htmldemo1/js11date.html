@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js内置对象date</title>
+    <script type="text/javascript">
+        var now = new Date();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var y = now.getFullYear();   //年
+        var m = now.getMonth() + 1;   //月
+        var d = now.getDate();      //日
+        var h = now.getHours();      //时
+        var mi = now.getMinutes();     //分
+        var s = now.getSeconds();     //秒
+        var w = now.getDay();       //周
+        //对格式进行处理
+        var month = m < 10 ? '0' + m : m;   //月
+        var day = d < 10 ? '0' + d : d;   //日
+        var hour = h < 10 ? '0' + h : h;  //小时
+        var minutes = mi < 10 ? '0' + mi : mi;  //分钟
+        var seconds = s < 10 ? '0' + s : s;  //秒
+        var week = arr[w];  //周
+        document.write("现在时间是：" + y + "年" + month + "月" + day + "日 " + hour + ":" + minutes + ":" + seconds + " " + week);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
