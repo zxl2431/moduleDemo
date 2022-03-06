@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js数据类型02</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var i = 5;
+        document.write("整数：" + typeof(i)+ "<br/>");
+        var f =3.14;
+        document.write("浮点数：" + typeof(f) + "<br/>");
+        var str ="abc";
+        document.write("字符串：" + typeof(str) + "<br/>");
+        var c ='a';
+        document.write("字符串：" + typeof(c) + "<br/>");
+        var b=true;
+        document.write("布尔类型：" + typeof(b) + "<br/>");
+        /* undefined 是未初始化类型, 不知道是什么类型 但是null是Object只是没有值*/
+        var u;
+        document.write("未定义的类型：" + typeof(u) + "<br/>");
+
+        //定义一个对象JSON对象
+        var obj = {
+            name: "孙悟空",
+            age: 500
+        };
+        document.write("对象的类型：" + typeof(obj) + "<br/>");
+        document.write("对象的名字：" + obj.name + "<br/>");
+        var n = null;
+        document.write("null：" + typeof(n) + "<br/>");
+
+    </script>
+</body>
+</html>
