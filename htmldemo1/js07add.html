@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js两个数相加</title>
+</head>
+<body>
+<script type="text/javascript">
+    //函数的定义
+    function add(m,n) {
+        // 在函数的内部输出arguments的长度和数组中的每个元素
+        document.write("arguments数组的长度:" +arguments.length + "<hr/>");
+
+        for(var i=0; i<arguments.length; i++) {
+            document.write(arguments[i] + "<br/>");
+        }
+
+        document.write("m=" +m + "<br/>");
+        document.write("n=" +n + "<br/>");
+
+        return m+n;
+    }
+
+    //函数的调用
+    document.write("两个数的和：" + add(5,3, 1));
+</script>
+</body>
+</html>

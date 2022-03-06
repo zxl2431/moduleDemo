@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+
+    <!-- css样式 -->
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+
+        .container {
+            /* 居中 */
+            margin: auto;
+            border: 1px solid black;
+            width: 850px;
+        }
+
+        img {
+            width: 850px;
+        }
+    </style>
+
+    <!-- js行为 -->
+    <script type="text/javascript">
+        var num = 1;
+        function changePicture() {
+            document.getElementById("pic").src = "img/"+num+".jpg";
+            if(num == 4) {
+                num = 0;
+            } else {
+                num++;
+            }
+        }
+
+        window.setInterval("changePicture()", 3000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="img/0.jpg" id="pic">
+    </div>
+
+</body>
+</html>
