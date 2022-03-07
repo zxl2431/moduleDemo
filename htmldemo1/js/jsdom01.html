@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            // 根据标签名找元素
+            var b2 = document.getElementById("b2");
+            b2.onclick = function() {
+                // 返回的是一个数组对象
+                var aNodes = document.getElementsByTagName("a");
+                for (var index = 0; index < aNodes.length; index++) {
+                    aNodes[index].href = "http://www.itcast.cn";
+                }
+            }
+
+            // 根据name属性值找
+            var b3 = document.getElementById("b3");
+            b3.onclick = function (ev) {
+                var divs = document.getElementsByName("one");
+                for (var index=0; index < divs.length; index++) {
+                    divs[index].innerHTML = "<a href='#'>黑马程序员</a>";
+                }
+            }
+
+            var b4 = document.getElementById("b4");
+            b4.onclick = function () {
+                //根据class的属性值找元素，返回一个数组对象
+                var divs = document.getElementsByClassName("two")
+                for (var index = 0; index < divs.length; index++) {
+                    divs[index].innerHTML = "<a href='#'>JavaEE开发</a>";
+                }
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="(通过标签名)给a链接添加地址" id="b2"/>
+    <input type="button" value="(通过name属性)给div设值" id="b3"/>
+    <input type="button" value="(通过类名)给div设值" id="b4"/>
+    <hr/>
+    <a>传智播客</a><br/>
+    <a>传智播客</a><br/>
+    <a>传智播客</a><br/>
+    <hr/>
+    <div name="one"></div>
+    <div name="one"></div>
+    <div name="one"></div>
+    <hr/>
+    <div class="two"></div>
+    <div class="two"></div>
+    <div class="two"></div>
+</body>
+</html>
