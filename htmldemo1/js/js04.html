@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市联动</title>
+
+    <script type="text/javascript">
+        // 每个省份 对应的数组
+        var citys = [
+            [""],
+            ["广州", "湛江", "东莞", "河源"],
+            ["南宁", "桂林", "北海", "玉林"],
+            ["长沙", "衡阳", "岳阳", "邵阳"]
+        ];
+
+        function selectCity(pNode) {
+            // 获取当前省份选择的索引值
+            console.log(pNode);
+            console.log(pNode.selectedIndex);
+            var index = pNode.selectedIndex;
+            // 根据索引取出该省份对应的城市
+            var cityData = citys[index];
+
+            // 遍历城市的一维数组
+            var options = "<option>---请选择市---</option>";
+            for (var index=0; index < cityData.length; index++) {
+                var cityName = cityData[index];
+                options += "<option>" + cityName + "</option>";
+            }
+
+            // 把这些城市都加到cityselect框下
+            var citeNode = document.getElementById("cityId");
+            citeNode.innerHTML = options;
+
+        }
+    </script>
+</head>
+<body>
+    <select id="provinceId" onchange="selectCity(this)">
+        <option value="">--请选择省--</option>
+        <option>广东省</option>
+        <option>广西省</option>
+        <option>湖南省</option>
+    </select>
+    <select id="cityId">
+        <option value="">--请选择市--</option>
+    </select>
+</body>
+</html>
