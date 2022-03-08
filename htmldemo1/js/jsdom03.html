@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点01</title>
+
+    <script type="text/javascript">
+        window.onload = function (ev) {
+            // 得到div元素
+            var divNode = document.getElementsByTagName("div")[0];
+            // 得到div的父节点
+            alert("父元素的名字:"+divNode.parentNode.nodeName + "节点类型:"+divNode.parentNode.nodeType);
+
+            // 获取所有的子标签 值包含html标签
+            // var children = divNode.children;
+            // 获取所有的子节点 包含text comment注释 和标签
+            var children = divNode.childNodes;
+            for (var index=0; index <children.length; index++) {
+                console.log("节点的名字:"+children[index].nodeName + "节点的类型" + children[index].nodeType);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <!--注意：div中所有出现的空格，制表，换行也是文本节点 -->
+        <span>王者荣耀</span>
+        <br/>
+        <img src="../img/0.jpg" width="300px" />
+    </div>
+</body>
+</html>
