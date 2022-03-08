@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息管理</title>
+
+    <style type="text/css">
+        table {
+            width: 500px;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        /*伪类样式*/
+        tr:hover {
+            background-color: yellow;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // 添加一行
+        function addRow() {
+            // 得到文本框的值
+            var no = document.getElementById("no").value;
+            // 清空
+            document.getElementById("no").value = "";
+
+           // 创建文本对象
+           var txtNo = document.createTextNode(no);
+           // 创建td1
+            var td1 = document.createElement("td");
+            td1.appendChild(txtNo);
+
+            // 创建tr
+            var tr = document.createElement("tr");
+            tr.appendChild(td1);
+
+            //添加第2格
+            var name = document.getElementById("name").value;
+            document.getElementById("name").value = "";
+            //创建文本对象
+            var nameText= document.createTextNode(name);
+            //创建td2
+            var td2 = document.createElement("td");
+            td2.appendChild(nameText);
+            //直接td2挂到tr上
+            tr.appendChild(td2);
+
+            // 简单做法, 直接修改td的innerHtml
+            var td3 = document.createElement("td");
+            td3.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"deleteRow(this)\">删除</a>";
+
+            tr.appendChild(td3);
+
+            // 得到tbody对象
+            var tbody = document.getElementById("data");
+            tbody.appendChild(tr);
+
+        }
+
+        // 删除一行
+        function deleteRow(obj) {
+            if(confirm("确定删除?")) {
+                console.log(obj);
+                console.log(obj.parentNode);
+                console.log(obj.parentNode.parentNode);
+                obj.parentNode.parentNode.remove();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table border="1" cellspacing="0" cellpadding="3">
+            <tbody id="data">
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>00001</td>
+                <td>潘金莲</td>
+                <td>
+                    <a href="javascript:;" onclick="deleteRow(this)">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>00002</td>
+                <td>鲁智深</td>
+                <td>
+                    <a href="javascript:;" onclick="deleteRow(this)">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br />
+        学号：<input type="text" id="no" value="" />
+        姓名：<input type="text" id="name" value="" />
+        <input type="button" id="addBtn" value="添加" onclick="addRow()"/>
+    </div>
+
+
+</body>
+</html>
