@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行换色</title>
+    <style type="text/css">
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        tr {
+            text-align: center;
+            height: 32px;
+        }
+
+        .redStyle {
+            background: lightpink;
+        }
+
+        .yellowStyle {
+            background: lightyellow;
+        }
+
+        .greenStyle {
+            background: lightgreen;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // 记录颜色
+        var color = "";
+
+        window.onload = function () {
+            // 获取所有行
+            var trNodes = document.getElementsByTagName("tr");
+            // 遍历所有行 分奇偶数
+            for (var index = 1; index < trNodes.length; index++) {
+                if(index % 2) {
+                    trNodes[index].className = "yellowStyle";
+                } else {
+                    trNodes[index].className = "redStyle";
+                }
+
+                //鼠标经过的事件
+                trNodes[index].onmouseover = function () {
+                    //记录没有换颜色之前的颜色
+                    color = this.className;
+                    this.className = "greenStyle";
+                }
+
+                //鼠标移出事件
+                trNodes[index].onmouseout = function () {
+                    //如果鼠标移出之后，要回到原来的颜色。
+                    this.className = color;
+                }
+
+
+            }
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+<table id="tab1" border="1" width="800" align="center">
+    <tr style="background-color: #ccc;">
+        <th>分类ID</th>
+        <th>分类名称</th>
+        <th>分类描述</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>手机数码</td>
+        <td>手机数码类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>电脑办公</td>
+        <td>电脑办公类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>鞋靴箱包</td>
+        <td>鞋靴箱包类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>家居饰品</td>
+        <td>家居饰品类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
