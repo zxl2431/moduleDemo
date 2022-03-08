@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js修改样式</title>
+
+    <style type="text/css">
+        .two {
+            color: red;
+            font-size: 45px;
+            font-family: 隶书;
+        }
+    </style>
+
+    <script type="text/javascript">
+        /* 修改多个样式的属性 */
+        function changeCss() {
+            var p1 = document.getElementById("first");
+            //语法：元素.style.样式名=样式值;
+            p1.style.color = "blue";
+            p1.style.fontSize = "30px";
+            p1.style.fontFamily = "楷体";
+        }
+
+        //
+        function changeClass() {
+            var p2 = document.getElementById("second");
+            p2.className = "two";
+        }
+
+    </script>
+
+</head>
+<body>
+    <p id="first">
+        这是第一自然段
+    </p>
+    <p id="second">
+        这是第二自然段
+    </p>
+    <input type="button"  value="改变几个样式" onclick="changeCss()"/>
+    <input type="button"  value="改变类样式" onclick="changeClass()"/>
+</body>
+</html>
