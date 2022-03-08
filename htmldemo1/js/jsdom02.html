@@ -18,9 +18,26 @@
         // 反选
         function reverseSelect() {
             var items = document.getElementsByName("item");
+            var all = document.getElementById("all");
+
             for (var i=0; i<items.length; i++) {
                 items[i].checked = !items[i].checked
             }
+            all.checked =!all.checked;
+        }
+
+        // 结算
+        function total() {
+            var sum=0;
+            var items = document.getElementsByName("item");
+            for (var i=0; i<items.length; i++) {
+                if (items[i].checked) {
+                    sum+=parseFloat(items[i].value);
+                }
+            }
+
+            // 显示到span
+            document.getElementById("result").innerHTML = "$" + sum;
         }
 
 
