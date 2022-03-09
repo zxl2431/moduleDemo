@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--设置页面的字符集-->
+    <meta charset="utf-8">
+    <!--强制浏览器按照最新的标准去渲染当前的网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        viewport：视口，支持响应式布局。
+     width: 初始宽度与设备的宽度相同
+     initial-scale：初始的缩放比，1:1
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 1. 导入bootstrap中的css样式文件 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. 导入jQuery框架 -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+        /*.container div {*/
+            /*border: 1px solid red;*/
+            /*height: 200px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="container" style="max-width: 400px;">
+    <h3>添加联系人</h3>
+    <form >
+        <div class="form-group">
+            <label for="user">姓名：</label>
+            <input class="form-control" type="text" id="user" value="" placeholder="请输入姓名"/>
+        </div>
+
+        <div class="form-group">
+            <label>性别：</label>
+            <input type="radio" name="gender" id="male" value="" />
+            <label for="male">男</label>
+            <input type="radio" name="gender" id="female" value="" />
+            <label for="female">女</label>
+        </div>
+
+        <div class="form-group">
+            <label for="birth">生日：</label>
+            <input class="form-control" type="date" name="birth" id="birth" value="" />
+        </div>
+
+        <div class="form-group">
+            <label for="edu">学历：</label>
+            <select class="form-control" name="edu" id="">
+                <option value="高中">高中</option>
+                <option value="大专">大专</option>
+                <option value="本科">本科</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <input type="button" value="注册" class="btn btn-primary"/>
+            <input type="button" value="取消"  class="btn btn-default"/>
+            <input type="button" value="退出"  class="btn btn-danger"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
