@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--设置页面的字符集-->
+    <meta charset="utf-8">
+    <!--强制浏览器按照最新的标准去渲染当前的网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        viewport：视口，支持响应式布局。
+     width: 初始宽度与设备的宽度相同
+     initial-scale：初始的缩放比，1:1
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 1. 导入bootstrap中的css样式文件 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. 导入jQuery框架 -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h3>模态框</h3>
+    <!--data-toggle="modal"属性表示打开模态框的开关-->
+    <!--data-target属性用于指定需要打开的模态框的id-->
+    <!--data-dismiss="modal" 表示关闭模态框-->
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        打开模态框
+    </button>
+    <div class="modal fade" id="myModal">
+        <!--这是一个模态对话框-->
+        <div class="modal-dialog">
+            <!--模态框的内容开始-->
+            <div class="modal-content">
+                <!--模态框的头部-->
+                <div class="modal-header">
+                    <!--点按钮关闭：data-dismiss="modal"-->
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">我是标题</h4>
+                </div>
+                <!--模态框的主体-->
+                <div class="modal-body">
+                    <p>模态框的内容&hellip;</p>
+                </div>
+                <!--模态框的脚部-->
+                <div class="modal-footer">
+                    <!--底部的关闭按钮-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <!--底部的提交按钮-->
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
+</body>
+</html>

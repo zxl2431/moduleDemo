@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--设置页面的字符集-->
+    <meta charset="utf-8">
+    <!--强制浏览器按照最新的标准去渲染当前的网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        viewport：视口，支持响应式布局。
+     width: 初始宽度与设备的宽度相同
+     initial-scale：初始的缩放比，1:1
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- 1. 导入bootstrap中的css样式文件 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. 导入jQuery框架 -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- data-ride 默认2秒以后滚动, data-interval 指定滚动的时间 -->
+<div id="myPic" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <!-- 指示器，中间的小圆点 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myPic" data-slide-to="0" class="active"></li>
+        <li data-target="#myPic" data-slide-to="1"></li>
+        <li data-target="#myPic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- 图片容器 -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/banner_1.jpg">
+            <div class="carousel-caption">
+                iPhone X
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="img/banner_2.jpg">
+            <div class="carousel-caption">
+                Mac Book Pro
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="img/banner_3.jpg">
+            <div class="carousel-caption">
+                iWatch
+            </div>
+        </div>
+    </div>
+
+    <!-- 左右按钮 -->
+    <a class="left carousel-control" href="#myPic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myPic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+</body>
+</html>
