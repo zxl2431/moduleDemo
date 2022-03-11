@@ -9,9 +9,9 @@ public class Student {
         System.out.println("构造代码块");
     }*/
 
-    String name;
-    String gender;
-    int age;
+    private String name;
+    public String gender;
+    private int age;
 
     public Student(String name, String gender, int age) {
         System.out.println("public 修饰有参数构造方法");
