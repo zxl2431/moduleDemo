@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE 书架 SYSTEM "bookshelf.dtd">
+<!DOCTYPE 书架 SYSTEM "bookshelf.dtd"> <!--外部本地DTD-->
 <书架>
     <书>
         <书名>JavaWeb</书名>
