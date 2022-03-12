@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="a.css" ?>
+<person id="110">
+    <age>18</age>
+    <name>张三</name>
+    <sex/>
+    <description><![CDATA[我非常喜欢阅读,阅读过<<java编程思想>>、<<大型企业网站架构>>]]></description>
+</person>
