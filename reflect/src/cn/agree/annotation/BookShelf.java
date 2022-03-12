@@ -1,5 +1,6 @@
 package cn.agree.annotation;
 
+@Book(value = "一千零一页", price = 1001, authors = {"安徒童话"})
 public class BookShelf {
 
     /*
