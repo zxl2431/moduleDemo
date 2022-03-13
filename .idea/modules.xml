@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" filepath="$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-object/base-object.iml" filepath="$PROJECT_DIR$/base-object/base-object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" filepath="$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/collection/collection.iml" filepath="$PROJECT_DIR$/collection/collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/execption/execption.iml" filepath="$PROJECT_DIR$/execption/execption.iml" />
       <module fileurl="file://$PROJECT_DIR$/file/file.iml" filepath="$PROJECT_DIR$/file/file.iml" />
@@ -17,8 +18,10 @@
       <module fileurl="file://$PROJECT_DIR$/htmldemo1/htmldemo1.iml" filepath="$PROJECT_DIR$/htmldemo1/htmldemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/internet/internet.iml" filepath="$PROJECT_DIR$/internet/internet.iml" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reflect/reflect.iml" filepath="$PROJECT_DIR$/reflect/reflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream2/stream2.iml" filepath="$PROJECT_DIR$/stream2/stream2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml/xml.iml" filepath="$PROJECT_DIR$/xml/xml.iml" />
     </modules>
   </component>
 </project>
