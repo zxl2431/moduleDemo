@@ -4,10 +4,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.itheima.cn bookshelf.xsd"
 ><!--指定schema文档约束当前XML文档-->
-    <书>
+    <书 >
         <书名>JS</书名>
         <作者>CoderWhy</作者>
         <售价>4350.00</售价>
     </书>
+    <书>
+        <书名>javascript</书名>
+        <作者>Mr.Zhang</作者>
+        <售价>78.00</售价>
+    </书>
+
 
 </书架>
