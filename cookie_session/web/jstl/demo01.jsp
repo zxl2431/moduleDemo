@@ -10,7 +10,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>jstl</title>
+    <title>jstl-if标签</title>
 </head>
 <body>
 
