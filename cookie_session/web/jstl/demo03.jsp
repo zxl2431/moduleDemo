@@ -43,6 +43,25 @@ var 属性在不循环对象的时候，相当于将for循环中的循环变量i
 </c:forEach>
 
 <br>
+<%--
+varStatus :保存了当前循环过程中的信息，信息包括以下内容：
+  1	  	public java.lang.Integer getBegin()
+  		 返回为标签设置的begin属性的值，如果没有设置begin属性则返回null
+  2		public int getCount()
+ 		 返回当前已循环迭代的次数
+  3		public java.lang.Object getCurrent()
+ 		 返回当前迭代到的元素对象
+  4		public java.lang.Integer getEnd()
+		  返回为标签设置的end属性的值，如果没有设置end属性则返回null
+  5		public int getIndex()
+ 		 返回当前迭代的索引号
+  6		public java.lang.Integer getStep()
+ 		 返回为标签设置的step属性的值，如果没有设置step属性则返回null
+  7		public boolean isFirst()
+ 		 返回当前是否是第一次迭代操作
+  8		public boolean isLast()
+ 		 返回当前是否是最后一次迭代操作
+--%>
 <c:forEach begin="11" end="15" step="1" var="info" varStatus="sta">
     <td>${sta.index}</td>
     <td>${sta.count}</td>
