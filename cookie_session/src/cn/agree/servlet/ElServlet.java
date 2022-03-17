@@ -1,5 +1,7 @@
 package cn.agree.servlet;
 
+import cn.agree.pojo.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +39,12 @@ public class ElServlet extends HttpServlet {
         map.put("language3", "c#");
         map.put("aa.bb.cc", "python");
         req.setAttribute("map",map);
+
+        // JavaBean
+        User user = new User();
+        user.setName("张三");
+        user.setPassword("123");
+        req.setAttribute("user", user);
 
         req.getRequestDispatcher("/4.jsp").forward(req, resp);
     }

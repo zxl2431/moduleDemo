@@ -21,5 +21,10 @@ ${arr[4]} <br>
 获取map集合：${map}<br>
 获取map集合某一数据：${map.language1}<br>
 获取map集合特殊key数据：${map["aa.bb.cc"]}<br>
+
+获取JavaBean数据：${user}<br>
+获取JavaBean指定属性的数据：${user.name} ${user.password}<br>
+使用中括号，获取JavaBean指定属性的数据：${user["name"]} ${user["password"]}<br>
+
 </body>
 </html>
