@@ -15,4 +15,11 @@ public class ContactServiceImpl implements ContactService {
     public List<Contact> queryAll() {
         return contactDao.queryAll();
     }
+
+    @Override
+    public void add(Contact con) {
+        contactDao.add(con);
+    }
+
+
 }

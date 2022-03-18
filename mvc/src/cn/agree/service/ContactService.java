@@ -9,4 +9,10 @@ public interface ContactService {
     *  查询所有联系人的方法
     * */
     List<Contact> queryAll();
+
+    /*
+    *  添加联系人
+    *
+    * */
+    void add(Contact con);
 }
