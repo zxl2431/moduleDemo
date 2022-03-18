@@ -21,5 +21,10 @@ public class ContactServiceImpl implements ContactService {
         contactDao.add(con);
     }
 
+    @Override
+    public void delete(int id) {
+        contactDao.delete(id);
+    }
+
 
 }

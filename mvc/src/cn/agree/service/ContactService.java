@@ -15,4 +15,9 @@ public interface ContactService {
     *
     * */
     void add(Contact con);
+
+    /*
+    *  删除联系人
+    * */
+    void delete(int id);
 }

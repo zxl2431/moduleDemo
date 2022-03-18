@@ -44,4 +44,11 @@ public class ContactDaoImpl implements ContactDao {
         String sql = "insert into contact values(null,?,?,?,?,?,?)";
         template.update(sql, con.getName(),con.getSex(),con.getAge(), con.getAddress(),con.getQq(),con.getEmail());
     }
+
+    @Override
+    public void delete(int id) {
+        System.out.println("ContactDao.delete()");
+        String sql = "delete from contact where id=?";
+        template.update(sql, id);
+    }
 }
