@@ -25,4 +25,9 @@ public interface ContactService {
     *  根据id查询联系人
     * */
     Contact queryById(int id);
+
+    /*
+    *  修改联系人
+    * */
+    void update(Contact contact);
 }

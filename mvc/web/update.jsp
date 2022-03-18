@@ -34,6 +34,8 @@
         <div class="form-group">
             <label for="name">姓名：</label>
             <input type="text" class="form-control" id="name" name="name" value="${con.name}"  readonly="readonly" placeholder="请输入姓名" />
+            <!--设置一个隐藏域，保存联系id-->
+            <input type="hidden" name="id" value="${con.id}">
         </div>
 
         <div class="form-group">

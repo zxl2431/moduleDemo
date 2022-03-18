@@ -31,5 +31,10 @@ public class ContactServiceImpl implements ContactService {
         return contactDao.queryById(id);
     }
 
+    @Override
+    public void update(Contact contact) {
+        contactDao.update(contact);
+    }
+
 
 }

@@ -25,4 +25,10 @@ public interface ContactDao {
     * */
     Contact queryById(int id);
 
+    /*
+    *  修改联系人的方法
+    *
+    * */
+    void update(Contact contact);
+
 }

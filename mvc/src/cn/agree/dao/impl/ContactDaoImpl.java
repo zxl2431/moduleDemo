@@ -55,8 +55,16 @@ public class ContactDaoImpl implements ContactDao {
 
     @Override
     public Contact queryById(int id) {
+        System.out.println("ContactDao.queryById()");
         String sql = "select * from contact where id = ?";
         Contact contact = template.queryForObject(sql, new BeanPropertyRowMapper<Contact>(Contact.class), id);
         return contact;
+    }
+
+    @Override
+    public void update(Contact contact) {
+        System.out.println("ContactDao.update()");
+        String sql= "update contact set sex = ?,age = ? ,address = ? ,qq = ? ,email = ? where id = ?";
+        template.update(sql,contact.getSex(),contact.getAge(),contact.getAddress(),contact.getQq(),contact.getEmail(),contact.getId());
     }
 }
