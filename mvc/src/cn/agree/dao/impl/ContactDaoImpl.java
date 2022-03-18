@@ -3,6 +3,7 @@ package cn.agree.dao.impl;
 import cn.agree.dao.ContactDao;
 import cn.agree.domain.Contact;
 import cn.agree.utils.JDBCUtil;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -50,5 +51,12 @@ public class ContactDaoImpl implements ContactDao {
         System.out.println("ContactDao.delete()");
         String sql = "delete from contact where id=?";
         template.update(sql, id);
+    }
+
+    @Override
+    public Contact queryById(int id) {
+        String sql = "select * from contact where id = ?";
+        Contact contact = template.queryForObject(sql, new BeanPropertyRowMapper<Contact>(Contact.class), id);
+        return contact;
     }
 }

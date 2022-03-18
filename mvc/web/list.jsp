@@ -53,7 +53,7 @@
                 <td>${item.address}</td>
                 <td>${item.qq}</td>
                 <td>${item.email}</td>
-                <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="/delete?id=${item.id}">删除</a></td>
+                <td><a class="btn btn-default btn-sm" href="/queryById?id=${item.id}">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="/delete?id=${item.id}">删除</a></td>
             </tr>
         </c:forEach>
         <tr>

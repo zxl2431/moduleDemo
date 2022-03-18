@@ -26,5 +26,10 @@ public class ContactServiceImpl implements ContactService {
         contactDao.delete(id);
     }
 
+    @Override
+    public Contact queryById(int id) {
+        return contactDao.queryById(id);
+    }
+
 
 }

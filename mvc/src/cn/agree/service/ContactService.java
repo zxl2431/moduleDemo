@@ -20,4 +20,9 @@ public interface ContactService {
     *  删除联系人
     * */
     void delete(int id);
+
+    /*
+    *  根据id查询联系人
+    * */
+    Contact queryById(int id);
 }
