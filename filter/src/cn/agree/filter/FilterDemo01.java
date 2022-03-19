@@ -5,7 +5,8 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebFilter(filterName = "FilterDemo01", urlPatterns = "/index.jsp", dispatcherTypes = DispatcherType.FORWARD)
+@WebFilter(filterName = "FilterDemo01", urlPatterns = "/index.jsp",
+        dispatcherTypes = {DispatcherType.FORWARD, DispatcherType.REQUEST})
 public class FilterDemo01 implements Filter {
 
     /*
