@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath }/IllegalServlet">
+<form method="post" action="${pageContext.request.contextPath }/encoding">
     请发表你的言论：<input type="text" name="message">
     <input type="submit" value="提交">
 </form>
