@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQ的for循环</title>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $list = $("#city li");
+            // 原始的for循环
+            /*for(var i=0; i<$list.length; i++) {
+                console.log($($list[i]).html())
+            }*/
+
+            // jQuery对象方法遍历
+           /* $list.each(function (index, element) {
+                console.log(index+"---"+$(element).html())
+            })*/
+
+            // jQuery的全局方法遍历
+            /*$.each($list, function (index, element) {
+                console.log(index+"---"+$(element).html())
+            })*/
+
+            // jQuery3.0的新特性 for of语句
+            for(li of $list) {
+                console.log($(li).html())
+            }
+
+        })
+    </script>
+</head>
+<body>
+
+    <ul id="city">
+        <li>北京</li>
+        <li>上海</li>
+        <li>天津</li>
+        <li>重庆</li>
+    </ul>
+</body>
+</html>

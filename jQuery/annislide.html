@@ -5,17 +5,38 @@
     <title>滑动效果</title>
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript">
+        /*
+        *  这是滑动的效果
+        *
+        * */
+
+        // function hideFn() {
+        //     $("#showDiv").slideUp("slow", "swing");
+        // }
+        //
+        // function showFn() {
+        //     $("#showDiv").slideDown("normal", "swing");
+        // }
+        //
+        // function toggleFn() {
+        //     $("#showDiv").slideToggle(5000, "linear");
+        // }
+
+        /*
+        *  这是淡入淡出的效果
+        * */
         function hideFn() {
-            $("#showDiv").slideUp("slow", "swing");
+            $("#showDiv").fadeIn("slow", "swing");
         }
 
         function showFn() {
-            $("#showDiv").slideDown("normal", "swing");
+            $("#showDiv").fadeOut("normal", "swing");
         }
 
         function toggleFn() {
-            $("#showDiv").slideToggle(5000, "linear");
+            $("#showDiv").fadeToggle(5000, "linear");
         }
+
     </script>
 </head>
 <body>
