@@ -8,14 +8,14 @@
     <script type="text/javascript">
         $(function () {
             // id选择器 属性选择器
-            $("#b1").click(function () {
-                $("#one").css("backgroundColor", "red");
-            });
+            // $("#b1").click(function () {
+            //     $("#one").css("backgroundColor", "red");
+            // });
 
             // id选择器 标签选择器
-            $("#b2").click(function () {
-                $("div").css("backgroundColor","orange");
-            })
+            // $("#b2").click(function () {
+            //     $("div").css("backgroundColor","orange");
+            // })
 
             // id选择器 类选择器
             $("#b3").click(function(){
@@ -26,6 +26,28 @@
             $("#b4").click(function(){
                 $("span,#two").css("backgroundColor","grey");
             });
+
+            /*
+            *  层级选择器
+            *  body 内部所有的 div
+            * */
+            $("#b1").click(function(){
+                $("body div").css("background-color","red");
+            });
+
+            /*
+            *  层级选择器
+            *  body内部 所有div子元素
+            *
+            * */
+            $("#b2").click(function(){
+                $("body>div").css("background-color","red");
+            });
+
+            /*
+            *
+            *
+            * */
 
         })
     </script>
@@ -62,6 +84,9 @@
 
     <div id="mover" >
         div  动画
+        <div>
+            这个应该不变
+        </div>
     </div>
 
     <span class="spanone">class为spanone的span元素</span>
