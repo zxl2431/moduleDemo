@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的事件绑定和解绑</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 给btn添加点击事件
+            $("#btn").on("click", function () {
+                console.log("点击事件发生了")
+            });
+
+            // 给btn-off添加解除点击事件
+            /*$("#btn-off").click(function () {
+                $("#btn").off("click")
+            })*/
+
+            $("#btn-off").on("click", function () {
+                $("#btn").off("click")
+            });
+
+            // 事件切换(鼠标移入移出)的普通写法
+            /*$("#myDiv").mouseover(function () {
+                $(this).css("background", "green");
+            })
+
+            $("#myDiv").mouseout(function () {
+                $(this).css("background", "red");
+            })*/
+
+            // 事件切换的链式写法
+            $("#myDiv").mouseover(function () {
+                $(this).css("background", "green");
+            }).mouseout(function () {
+                $(this).css("background", "red");
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="使用on绑定点击事件">
+    <input id="btn-off" type="button" value="使用off解绑点击事件">
+
+    <div id="myDiv" style="width:300px;height:300px;background:red">鼠标移入变成绿色，移出回复红色</div>
+</body>
+</html>
