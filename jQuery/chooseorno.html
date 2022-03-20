@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选全不选</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        function selectAll(obj) {
+            // this是js对象
+            // 将下面的所有复选框的状态编程总选择框一致
+            $("input[class='itemSelect']").prop("checked", $(obj).prop("checked"))
+        }
+
+        function revSelect() {
+            // 将jquery(数组)对象内部的每个元素都执行一次
+            // 这个思路不错 厉害
+            $("input[class='itemSelect']").click();
+        }
+    </script>
+</head>
+<body>
+<table id="tab1" border="1" width="800" align="center" >
+    <tr>
+        <td colspan="5">
+            <input type="button" value="反选" onclick="revSelect()">
+        </td>
+    </tr>
+    <tr>
+        <th><input type="checkbox" onclick="selectAll(this)" ></th>
+        <th>分类ID</th>
+        <th>分类名称</th>
+        <th>分类描述</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="itemSelect"></td>
+        <td>1</td>
+        <td>手机数码</td>
+        <td>手机数码类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="itemSelect"></td>
+        <td>2</td>
+        <td>电脑办公</td>
+        <td>电脑办公类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="itemSelect"></td>
+        <td>3</td>
+        <td>鞋靴箱包</td>
+        <td>鞋靴箱包类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="itemSelect"></td>
+        <td>4</td>
+        <td>家居饰品</td>
+        <td>家居饰品类商品</td>
+        <td><a href="">修改</a>|<a href="">删除</a></td>
+    </tr>
+</table>
+</body>
+</html>
