@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax引擎</title>
+    
+    <script type="text/javascript">
+        function sendRequest() {
+            // js的Ajax访问
+            // 1. 创建Ajax引擎对象
+            var xmlhttp = new XMLHttpRequest();
+            // 2.绑定提交地址
+            /*
+            *  GET请求
+            *  url地址
+            *  true 异步 false 同步
+            *
+            * */
+            xmlhttp.open("GET", "/ajaxser01", true);
+            // 3发送请求
+            xmlhttp.send();
+
+            // 4为ajax引擎对象绑定监听
+            xmlhttp.onreadystatechange=function () {    // 引擎状态一改变就触发该事件
+                if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    // 5接受响应数据
+                    console.log(xmlhttp.responseText);
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="ajax异步访问服务器端" onclick="sendRequest()">
+</body>
+</html>
