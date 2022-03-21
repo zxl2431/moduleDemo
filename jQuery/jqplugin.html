@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery插件</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+        // 对jQuery对象的函数进行扩展
+        $.fn.extend({
+            // 定义js对象的check属性 值是一个函数
+            check: function () {
+                return this.each(function () {
+                    this.checked = true;
+                })
+            },
+
+            uncheck: function () {
+                return this.each(function () {
+                    this.checked = false;
+                })
+            }
+
+        });
+
+        function checkFn() {
+            $("input[type=checkbox]").check();
+        }
+
+        function uncheckFn() {
+            $("input[type=checkbox]").uncheck();
+
+        }
+    </script>
+</head>
+<body>
+    <input id="btn-check" type="button" value="点击选中复选框" onclick="checkFn()">
+    <input id="btn-uncheck" type="button" value="点击取消复选框选中" onclick="uncheckFn()">
+    <br/>
+    <input type="checkbox" value="football">足球
+    <input type="checkbox" value="basketball">篮球
+    <input type="checkbox" value="volleyball">排球
+</body>
+</html>
