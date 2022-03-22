@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        // <!--JSON JS对象标记 是一种轻量化的数据交换格式-->
+
+       // JSON有两种数据格式
+       // {} 对象型
+       // [{},{},{}] 数组型
+
+       // Json定义 对象型
+        var person = {"firstname":"张","lastname":"三丰","age":100};
+
+        // json解析
+        console.log(person.firstname);
+        console.log(person.lastname);
+        console.log(person.age);
+
+        // JSON定义 数组型
+        var persons = [
+            {"firstname":"张","lastname":"三丰","age":100},
+            {"firstname":"张","lastname":"催化","age":80},
+            {"firstname":"张","lastname":"五级","age":50}
+        ];
+
+        for(var i=0; i<persons.length; i++){
+            console.log(persons[i].lastname);
+        }
+
+        // JSON定义 对象里面包含数组再嵌套对象
+        var json = {
+            "baobao":[
+                {"name":"小双","age":18,"addr":"扬州"},
+                {"name":"建宁","age":18,"addr":"北京海淀"},
+                {"name":"龙儿","age":38,"addr":"岛国"},
+                {"name":"阿珂","age":17,"addr":"台湾"}
+            ],
+            "haohao":[
+                {"name":"楠楠","age":23,"addr":"北京昌平修正"},
+                {"name":"倩倩","age":18,"addr":"上海"}
+            ]
+        }
+
+        for(var i=0; i<json.baobao.length; i++) {
+            console.log(json.baobao[i].name);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
