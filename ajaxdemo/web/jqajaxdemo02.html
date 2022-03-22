@@ -5,6 +5,7 @@
     <title>Insert title here</title>
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript">
+        // get请求方式
         function getRequest(){
             $.get(
                 "/ajaxser01",
@@ -16,10 +17,11 @@
             );
         }
 
+        // post请求方式
         function postRequest(){
             $.post(
                 "/ajaxser01",
-                "name=aobama&age=33",
+                "name=xijinping&age=33",
                 function(data){
                     console.log(data);
                 },
@@ -27,12 +29,30 @@
             );
         }
 
+        // ajax方式可以更加详细的设置底层的参数
+        function ajaxRequest() {
+            $.ajax({
+                url:"/ajaxser01",
+                async:true,
+                data:"name=tump&age=67",
+                type:"GET",
+                dataType:"text",
+                success:function (data) {
+                    console.log(data);
+                },
+                error:function () {
+                    console.log("数据没有返回")
+                }
+            })
+        }
+
 
 
     </script>
 </head>
 <body>
-    <input type="button" value="ajax异步访问服务器端" onclick="getRequest()">
-    <input type="button" value="ajax异步访问服务器端" onclick="postRequest()">
+    <input type="button" value="ajax异步get访问服务器端" onclick="getRequest()">
+    <input type="button" value="ajax异步post访问服务器端" onclick="postRequest()">
+    <input type="button" value="ajax访问服务器端" onclick="ajaxRequest()">
 </body>
 </html>
