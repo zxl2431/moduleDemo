@@ -17,6 +17,9 @@ public class AjaxSer01 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("ajax response data ...");
+        //获取请求参数
+        String name = req.getParameter("name");
+        String age = req.getParameter("age");
+        resp.getWriter().write("ajax response data ..."+name+"..."+age);
     }
 }
