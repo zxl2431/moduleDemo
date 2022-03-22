@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="servlet_rsp:war exploded">
+    <output-path>$PROJECT_DIR$/artifacts/servlet_rsp_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="servlet_rsp/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="servlet_rsp" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

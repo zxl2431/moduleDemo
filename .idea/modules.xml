@@ -8,17 +8,24 @@
       <module fileurl="file://$PROJECT_DIR$/JdbcTemplate/JdbcTemplate.iml" filepath="$PROJECT_DIR$/JdbcTemplate/JdbcTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" filepath="$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ajaxdemo/ajaxdemo.iml" filepath="$PROJECT_DIR$/ajaxdemo/ajaxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-object/base-object.iml" filepath="$PROJECT_DIR$/base-object/base-object.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" filepath="$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/collection/collection.iml" filepath="$PROJECT_DIR$/collection/collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cookie_session/cookie_session.iml" filepath="$PROJECT_DIR$/cookie_session/cookie_session.iml" />
       <module fileurl="file://$PROJECT_DIR$/execption/execption.iml" filepath="$PROJECT_DIR$/execption/execption.iml" />
       <module fileurl="file://$PROJECT_DIR$/file/file.iml" filepath="$PROJECT_DIR$/file/file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filter/filter.iml" filepath="$PROJECT_DIR$/filter/filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/functioncode/functioncode.iml" filepath="$PROJECT_DIR$/functioncode/functioncode.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloworlddemo/helloworlddemo.iml" filepath="$PROJECT_DIR$/helloworlddemo/helloworlddemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/htmldemo1/htmldemo1.iml" filepath="$PROJECT_DIR$/htmldemo1/htmldemo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/internet/internet.iml" filepath="$PROJECT_DIR$/internet/internet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jQuery/jQuery.iml" filepath="$PROJECT_DIR$/jQuery/jQuery.iml" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvc/mvc.iml" filepath="$PROJECT_DIR$/mvc/mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/reflect/reflect.iml" filepath="$PROJECT_DIR$/reflect/reflect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet_req/servlet_req.iml" filepath="$PROJECT_DIR$/servlet_req/servlet_req.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet_rsp/servlet_rsp.iml" filepath="$PROJECT_DIR$/servlet_rsp/servlet_rsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream/stream.iml" filepath="$PROJECT_DIR$/stream/stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/stream2/stream2.iml" filepath="$PROJECT_DIR$/stream2/stream2.iml" />
       <module fileurl="file://$PROJECT_DIR$/xml/xml.iml" filepath="$PROJECT_DIR$/xml/xml.iml" />

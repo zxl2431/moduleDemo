@@ -45,6 +45,39 @@
                 }
             })
         }
+        
+        // jQuery get新增签名方式
+        function getReq() {
+            $.get({
+                url:"/ajaxser01",
+                async:true,
+                data:"name=maoyeye&age=78",
+                type:"GET",
+                dataType:"text",
+                success:function(data){
+                    alert(data);
+                },
+                error:function(){
+                    alert("数据没有成功返回!")
+                }
+            });
+        }
+        
+        // jQuery post新增签名方式
+        function postReq() {
+            $.post({
+                url: "/ajaxser01",
+                async: true,
+                data: "name=jiangzeming&age=33",
+                dataType: "text",
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert("数据没有成功返回!")
+                }
+            })
+        }
 
 
 
@@ -54,5 +87,7 @@
     <input type="button" value="ajax异步get访问服务器端" onclick="getRequest()">
     <input type="button" value="ajax异步post访问服务器端" onclick="postRequest()">
     <input type="button" value="ajax访问服务器端" onclick="ajaxRequest()">
+    <input type="button" value="ajax-get签名方式" onclick="getReq()">
+    <input type="button" value="ajax-post签名方式" onclick="postReq()">
 </body>
 </html>
