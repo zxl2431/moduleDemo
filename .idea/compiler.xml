@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="agree_javase_demo01" />
+        <module name="agree_javaweb_demo01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="agree_javase_demo01" target="1.9" />
+      <module name="agree_javase_demo01" target="1.8" />
+      <module name="agree_javaweb_demo01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" filepath="$PROJECT_DIR$/agree-dubbo-provider/agree-dubbo-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/agree_javase_demo01/agree_javase_demo01.iml" filepath="$PROJECT_DIR$/agree_javase_demo01/agree_javase_demo01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/agree_javaweb_demo01/agree_javaweb_demo01.iml" filepath="$PROJECT_DIR$/agree_javaweb_demo01/agree_javaweb_demo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/ajaxdemo/ajaxdemo.iml" filepath="$PROJECT_DIR$/ajaxdemo/ajaxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-object/base-object.iml" filepath="$PROJECT_DIR$/base-object/base-object.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" filepath="$PROJECT_DIR$/bootstrapDemo/bootstrapDemo.iml" />
